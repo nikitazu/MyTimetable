@@ -116,6 +116,8 @@
 		F72538E71749DF12002D06BE /* MyTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				F72539191749DF40002D06BE /* Entities */,
+				F72539181749DF39002D06BE /* UseCases */,
 				F72538F31749DF12002D06BE /* MSCAppDelegate.h */,
 				F72538F41749DF12002D06BE /* MSCAppDelegate.m */,
 				F72538F61749DF12002D06BE /* MainMenu.xib */,
@@ -154,6 +156,20 @@
 				F725390A1749DF12002D06BE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F72539181749DF39002D06BE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UseCases;
+			sourceTree = "<group>";
+		};
+		F72539191749DF40002D06BE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
