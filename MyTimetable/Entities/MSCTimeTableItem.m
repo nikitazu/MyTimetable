@@ -1,13 +1,16 @@
 //
-//  MyTimetableTests.h
-//  MyTimetableTests
+//  MSCTimeTableItem.m
+//  MyTimetable
 //
 //  Created by Никита Б. Зуев on 20.05.13.
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "MSCTimeTableItem.h"
 
-@interface MyTimetableTests : SenTestCase
+@implementation MSCTimeTableItem
+
+@synthesize at;
+@synthesize done;
 
 @end

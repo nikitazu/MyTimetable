@@ -17,7 +17,12 @@
 		F72539031749DF12002D06BE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72539021749DF12002D06BE /* SenTestingKit.framework */; };
 		F72539041749DF12002D06BE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72538E11749DF12002D06BE /* Cocoa.framework */; };
 		F725390C1749DF12002D06BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F725390A1749DF12002D06BE /* InfoPlist.strings */; };
-		F725390F1749DF12002D06BE /* MyTimetableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F725390E1749DF12002D06BE /* MyTimetableTests.m */; };
+		F725391F1749E072002D06BE /* MSCTimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F725391E1749E072002D06BE /* MSCTimeTable.m */; };
+		F72539221749E15C002D06BE /* MSCTimeTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F72539211749E15C002D06BE /* MSCTimeTableItem.m */; };
+		F72539281749E447002D06BE /* MSCCreateTimeTableUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F72539271749E447002D06BE /* MSCCreateTimeTableUseCase.m */; };
+		F725392C1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */; };
+		F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */; };
+		F7B4BD7D1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +54,18 @@
 		F72539021749DF12002D06BE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F72539091749DF12002D06BE /* MyTimetableTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyTimetableTests-Info.plist"; sourceTree = "<group>"; };
 		F725390B1749DF12002D06BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F725390D1749DF12002D06BE /* MyTimetableTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTimetableTests.h; sourceTree = "<group>"; };
-		F725390E1749DF12002D06BE /* MyTimetableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTimetableTests.m; sourceTree = "<group>"; };
+		F725391D1749E072002D06BE /* MSCTimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTable.h; path = Entities/MSCTimeTable.h; sourceTree = "<group>"; };
+		F725391E1749E072002D06BE /* MSCTimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTable.m; path = Entities/MSCTimeTable.m; sourceTree = "<group>"; };
+		F72539201749E15C002D06BE /* MSCTimeTableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableItem.h; path = Entities/MSCTimeTableItem.h; sourceTree = "<group>"; };
+		F72539211749E15C002D06BE /* MSCTimeTableItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableItem.m; path = Entities/MSCTimeTableItem.m; sourceTree = "<group>"; };
+		F72539261749E447002D06BE /* MSCCreateTimeTableUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCCreateTimeTableUseCase.h; path = UseCases/MSCCreateTimeTableUseCase.h; sourceTree = "<group>"; };
+		F72539271749E447002D06BE /* MSCCreateTimeTableUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCCreateTimeTableUseCase.m; path = UseCases/MSCCreateTimeTableUseCase.m; sourceTree = "<group>"; };
+		F725392A1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestCreateTimeTableUseCase.h; path = TestUseCases/MSCTestCreateTimeTableUseCase.h; sourceTree = "<group>"; };
+		F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestCreateTimeTableUseCase.m; path = TestUseCases/MSCTestCreateTimeTableUseCase.m; sourceTree = "<group>"; };
+		F7B4BD771750E072007D5A80 /* NSDate+AddRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+AddRemove.h"; path = "categories/NSDate+AddRemove.h"; sourceTree = "<group>"; };
+		F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AddRemove.m"; path = "categories/NSDate+AddRemove.m"; sourceTree = "<group>"; };
+		F7B4BD7B1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSCTestNSDate+AddRemove.h"; path = "categories/MSCTestNSDate+AddRemove.h"; sourceTree = "<group>"; };
+		F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSCTestNSDate+AddRemove.m"; path = "categories/MSCTestNSDate+AddRemove.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +131,7 @@
 		F72538E71749DF12002D06BE /* MyTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				F7B4BD761750E031007D5A80 /* Categories */,
 				F72539191749DF40002D06BE /* Entities */,
 				F72539181749DF39002D06BE /* UseCases */,
 				F72538F31749DF12002D06BE /* MSCAppDelegate.h */,
@@ -142,8 +158,8 @@
 		F72539071749DF12002D06BE /* MyTimetableTests */ = {
 			isa = PBXGroup;
 			children = (
-				F725390D1749DF12002D06BE /* MyTimetableTests.h */,
-				F725390E1749DF12002D06BE /* MyTimetableTests.m */,
+				F7B4BD7A1750E0A6007D5A80 /* Categories */,
+				F72539291749E498002D06BE /* TestUseCases */,
 				F72539081749DF12002D06BE /* Supporting Files */,
 			);
 			path = MyTimetableTests;
@@ -161,6 +177,8 @@
 		F72539181749DF39002D06BE /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				F72539261749E447002D06BE /* MSCCreateTimeTableUseCase.h */,
+				F72539271749E447002D06BE /* MSCCreateTimeTableUseCase.m */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -168,8 +186,39 @@
 		F72539191749DF40002D06BE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F725391D1749E072002D06BE /* MSCTimeTable.h */,
+				F725391E1749E072002D06BE /* MSCTimeTable.m */,
+				F72539201749E15C002D06BE /* MSCTimeTableItem.h */,
+				F72539211749E15C002D06BE /* MSCTimeTableItem.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		F72539291749E498002D06BE /* TestUseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F725392A1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.h */,
+				F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */,
+			);
+			name = TestUseCases;
+			sourceTree = "<group>";
+		};
+		F7B4BD761750E031007D5A80 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F7B4BD771750E072007D5A80 /* NSDate+AddRemove.h */,
+				F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		F7B4BD7A1750E0A6007D5A80 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F7B4BD7B1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.h */,
+				F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +333,10 @@
 				F72538EE1749DF12002D06BE /* main.m in Sources */,
 				F72538F51749DF12002D06BE /* MSCAppDelegate.m in Sources */,
 				F72538FB1749DF12002D06BE /* MyTimetable.xcdatamodeld in Sources */,
+				F725391F1749E072002D06BE /* MSCTimeTable.m in Sources */,
+				F72539221749E15C002D06BE /* MSCTimeTableItem.m in Sources */,
+				F72539281749E447002D06BE /* MSCCreateTimeTableUseCase.m in Sources */,
+				F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F725390F1749DF12002D06BE /* MyTimetableTests.m in Sources */,
+				F725392C1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m in Sources */,
+				F7B4BD7D1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +527,7 @@
 				F72539141749DF12002D06BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F72539151749DF12002D06BE /* Build configuration list for PBXNativeTarget "MyTimetableTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +536,7 @@
 				F72539171749DF12002D06BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
