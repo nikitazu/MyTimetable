@@ -36,13 +36,26 @@
     NSMutableArray* items = [NSMutableArray array];
     
     NSInteger itemsCount = [[input valueForKey:@"itemsCount"] longValue];
+    if (itemsCount == 0) {
+        return table;
+    }
+    
+    NSInteger everyNth = [[input valueForKey:@"everyNth"] longValue];
+    if (!(everyNth > 0)) {
+        everyNth = 1;
+    }
+    
     NSDate* startAt = [input valueForKey:@"startAt"];
+    if (!startAt) {
+        return table;
+    }
+    
     NSInteger counter = 0;
     
     while (counter < itemsCount) {
         MSCTimeTableItem* item = [[MSCTimeTableItem alloc] init];
         item.done = NO;
-        item.at = [startAt dateByAddingDays: counter];
+        item.at = [startAt dateByAddingDays: counter * everyNth];
         [items addObject: item];
         counter = counter + 1;
     }
