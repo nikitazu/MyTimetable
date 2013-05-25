@@ -68,7 +68,6 @@
     
     STAssertNotNil(result, @"Created timetable should not be nil");
     STAssertTrue(result.items.count == 3, @"3 items should be created");
-    
     for (MSCTimeTableItem* item in result.items) {
         STAssertFalse(item.done, @"items should be undone at init");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
@@ -113,6 +112,8 @@
     
     result = [uc createWithInput:input];
     
+    STAssertNotNil(result, @"Created timetable should not be nil");
+    STAssertTrue(result.items.count == 4, @"4 items should be created");
     for (MSCTimeTableItem* item in result.items) {
         STAssertFalse(item.done, @"items should be undone at init");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
@@ -143,6 +144,8 @@
     
     result = [uc createWithInput:input];
     
+    STAssertNotNil(result, @"Created timetable should not be nil");
+    STAssertTrue(result.items.count == 2, @"2 items should be created");
     for (MSCTimeTableItem* item in result.items) {
         STAssertFalse(item.done, @"items should be undone at init");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
@@ -160,7 +163,31 @@
 
 - (void)testEveryWeek
 {
-    STFail(@"todo");
+    input = @{@"template": @"everyday",
+              @"itemsCount": @3,
+              @"startAt": [format dateFromString:@"10.10.2010"],
+              @"everyNth": @7};
+    
+    result = [uc createWithInput:input];
+    
+    STAssertNotNil(result, @"Created timetable should not be nil");
+    STAssertTrue(result.items.count == 3, @"3 items should be created");
+    for (MSCTimeTableItem* item in result.items) {
+        STAssertFalse(item.done, @"items should be undone at init");
+        STAssertNotNil(item.at, @"items at date/time should be initialized");
+    }
+    
+    MSCTimeTableItem* day1 = result.items[0];
+    MSCTimeTableItem* day2 = result.items[1];
+    MSCTimeTableItem* day3 = result.items[2];
+    
+    NSDate* date1 = [format dateFromString:@"10.10.2010"];
+    NSDate* date2 = [format dateFromString:@"17.10.2010"];
+    NSDate* date3 = [format dateFromString:@"24.10.2010"];
+    
+    STAssertTrue(day1.at == date1, @"Week 1 should start at 10.10.2010");
+    STAssertTrue(day2.at == date2, @"Week 2 should start at 17.10.2010");
+    STAssertTrue(day3.at == date3, @"Week 3 should start at 24.10.2010");
 }
 
 - (void)testEveryMonth
