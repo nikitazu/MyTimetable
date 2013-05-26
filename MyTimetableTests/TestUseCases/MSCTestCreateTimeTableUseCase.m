@@ -15,6 +15,7 @@
     MSCCreateTimeTableUseCase* uc;
     MSCTimeTable* result;
     NSDateFormatter* format;
+    NSDateFormatter* timeFormat;
 }
 
 
@@ -25,8 +26,12 @@
     input = nil;
     result = nil;
     uc = [[MSCCreateTimeTableUseCase alloc] init];
+    
     format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd.MM.yyyy"];
+    
+    timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"dd.MM.yyyy-HH:mm"];
 }
 
 - (void)tearDown
@@ -244,7 +249,29 @@
 
 - (void)testEverydayAtCertainTime
 {
-    STFail(@"todo");
+    input = @{@"template": @"every",
+              @"everyType": @"day",
+              @"itemsCount": @3,
+              @"startAt": [timeFormat dateFromString:@"10.10.2010-11:30"]};
+    
+    result = [uc createWithInput:input];
+    
+    MSCTimeTableItem* dayOne = result.items[0];
+    MSCTimeTableItem* dayTwo = result.items[1];
+    MSCTimeTableItem* dayTre = result.items[2];
+    
+    NSString* dateOne = [timeFormat stringFromDate:dayOne.at];
+    NSString* dateTwo = [timeFormat stringFromDate:dayTwo.at];
+    NSString* dateTre = [timeFormat stringFromDate:dayTre.at];
+    
+    STAssertTrue([dateOne isEqualToString:@"10.10.2010-11:30"],
+                 @"Day one should start at 10.10.2010-11:30");
+    
+    STAssertTrue([dateTwo isEqualToString:@"11.10.2010-11:30"],
+                 @"Day two should start at 11.10.2010-11:30");
+    
+    STAssertTrue([dateTre isEqualToString:@"12.10.2010-11:30"],
+                 @"Day three should start at 12.10.2010-11:30");
 }
 
 - (void)testEverydayXtimesPerDay
