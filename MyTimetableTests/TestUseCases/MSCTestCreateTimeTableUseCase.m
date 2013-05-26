@@ -239,11 +239,30 @@
 
 - (void)testAtWeekends
 {
+    input = @{@"template": @"every",
+              @"everyType": @"week",
+              @"itemsCount": @3,
+              @"startAt": [format dateFromString:@"02.10.2010"], // saturday
+              @"perItemCount": @2,
+              @"perItemStartAt": @[[format dateFromString:@"02.10.2010"],   // saturday
+                                   [format dateFromString:@"03.10.2010"]]}; // sunday
+    
     STFail(@"todo");
 }
 
 - (void)testAtWorkdays
 {
+    input = @{@"template": @"every",
+              @"everyType": @"week",
+              @"itemsCount": @3,
+              @"startAt": [format dateFromString:@"04.10.2010"], // monday
+              @"perItemCount": @2,
+              @"perItemStartAt": @[[format dateFromString:@"04.10.2010"],   // monday
+                                   [format dateFromString:@"05.10.2010"],   // tuesday
+                                   [format dateFromString:@"06.10.2010"],   // wednesday
+                                   [format dateFromString:@"07.10.2010"],   // thursday
+                                   [format dateFromString:@"08.10.2010"]]}; // friday
+    
     STFail(@"todo");
 }
 
@@ -276,16 +295,26 @@
 
 - (void)testEverydayXtimesPerDay
 {
+    input = @{@"template": @"every",
+              @"everyType": @"day",
+              @"itemsCount": @3,
+              @"perItemCount": @2,
+              @"startAt": [format dateFromString:@"10.10.2010"]};
+    
     STFail(@"todo");
 }
 
-- (void)testEveryXdayYtimesPerDay
-{
-    STFail(@"todo");
-}
 
 - (void)testEveryXdayYtimesPerDayAtCertainTime
 {
+    input = @{@"template": @"every",
+              @"everyType": @"day",
+              @"itemsCount": @3,
+              @"startAt": [format dateFromString:@"10.10.2010"],
+              @"perItemCount": @2,
+              @"perItemStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
+                                   [timeFormat dateFromString:@"10.10.2010-15:00"]]};
+    
     STFail(@"todo");
 }
 
