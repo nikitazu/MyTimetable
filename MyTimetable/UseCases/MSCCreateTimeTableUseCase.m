@@ -8,6 +8,7 @@
 
 #import "MSCCreateTimeTableUseCase.h"
 #import "NSDate+AddRemove.h"
+#import "NSString+DateComponents.h"
 
 @implementation MSCCreateTimeTableUseCase
 
@@ -23,17 +24,23 @@
     
     NSString* template = [input valueForKey:@"template"];
     
-    if ([template isEqualToString:@"everyday"]) {
-        return [self createFromEverydayTemplate: table withInput: input];
+    if ([template isEqualToString:@"every"]) {
+        return [self createFromEveryTemplate: table
+                                   withInput: input];
     }
     
     return table;
 }
 
-- (MSCTimeTable*) createFromEverydayTemplate: (MSCTimeTable*)table
-                                   withInput: (NSDictionary*)input
+- (MSCTimeTable*) createFromEveryTemplate: (MSCTimeTable*)table
+                                withInput: (NSDictionary*)input
 {
     NSMutableArray* items = [NSMutableArray array];
+    
+    NSString* everyType = [input valueForKey:@"everyType"];
+    if (!everyType) {
+        everyType = @"day";
+    }
     
     NSInteger itemsCount = [[input valueForKey:@"itemsCount"] longValue];
     if (itemsCount == 0) {
@@ -54,8 +61,9 @@
     
     while (counter < itemsCount) {
         MSCTimeTableItem* item = [[MSCTimeTableItem alloc] init];
+        NSDateComponents* components = [everyType dateComponentsWithAmount: counter * everyNth];
+        item.at = [startAt dateByAddingComponents: components];
         item.done = NO;
-        item.at = [startAt dateByAddingDays: counter * everyNth];
         [items addObject: item];
         counter = counter + 1;
     }

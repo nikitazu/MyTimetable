@@ -60,7 +60,8 @@
 
 - (void)testEveryday
 {
-    input = @{@"template": @"everyday",
+    input = @{@"template": @"every",
+              @"everyType": @"day",
               @"itemsCount": @3,
               @"startAt": [format dateFromString:@"10.10.2010"]};
     
@@ -88,7 +89,8 @@
 
 - (void)testEverydayNoItemsCount
 {
-    input = @{@"template": @"everyday"};
+    input = @{@"template": @"every",
+              @"everyType": @"day",};
     
     result = [uc createWithInput:input];
     STAssertTrue(result.items.count == 0, @"no items should be created without itemsCount");
@@ -96,7 +98,8 @@
 
 - (void)testEverydayNoStartAt
 {
-    input = @{@"template": @"everyday",
+    input = @{@"template": @"every",
+              @"everyType": @"day",
               @"itemsCount": @3};
     
     result = [uc createWithInput:input];
@@ -105,7 +108,8 @@
 
 - (void)testEvery2ndDay
 {
-    input = @{@"template": @"everyday",
+    input = @{@"template": @"every",
+              @"everyType": @"day",
               @"itemsCount": @4,
               @"startAt": [format dateFromString:@"10.10.2010"],
               @"everyNth": @2};
@@ -137,7 +141,8 @@
 
 - (void)testEveryNegativeDay
 {
-    input = @{@"template": @"everyday",
+    input = @{@"template": @"every",
+              @"everyType": @"day",
               @"itemsCount": @2,
               @"startAt": [format dateFromString:@"10.10.2010"],
               @"everyNth": @-1}; // <--  <=0 should reset to 1
@@ -163,19 +168,12 @@
 
 - (void)testEveryWeek
 {
-    input = @{@"template": @"everyday",
+    input = @{@"template": @"every",
+              @"everyType": @"week",
               @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"10.10.2010"],
-              @"everyNth": @7};
+              @"startAt": [format dateFromString:@"10.10.2010"]};
     
     result = [uc createWithInput:input];
-    
-    STAssertNotNil(result, @"Created timetable should not be nil");
-    STAssertTrue(result.items.count == 3, @"3 items should be created");
-    for (MSCTimeTableItem* item in result.items) {
-        STAssertFalse(item.done, @"items should be undone at init");
-        STAssertNotNil(item.at, @"items at date/time should be initialized");
-    }
     
     MSCTimeTableItem* day1 = result.items[0];
     MSCTimeTableItem* day2 = result.items[1];
@@ -192,12 +190,46 @@
 
 - (void)testEveryMonth
 {
-    STFail(@"todo");
+    input = @{@"template": @"every",
+              @"everyType": @"month",
+              @"itemsCount": @4,
+              @"startAt": [format dateFromString:@"10.10.2010"]};
+    
+    result = [uc createWithInput:input];
+    
+    MSCTimeTableItem* day1 = result.items[0];
+    MSCTimeTableItem* day2 = result.items[1];
+    MSCTimeTableItem* day3 = result.items[2];
+    MSCTimeTableItem* day4 = result.items[3];
+    
+    NSDate* date1 = [format dateFromString:@"10.10.2010"];
+    NSDate* date2 = [format dateFromString:@"10.11.2010"];
+    NSDate* date3 = [format dateFromString:@"10.12.2010"];
+    NSDate* date4 = [format dateFromString:@"10.01.2011"];
+    
+    STAssertTrue(day1.at == date1, @"Month 1 should start at 10.10.2010");
+    STAssertTrue(day2.at == date2, @"Month 2 should start at 10.11.2010");
+    STAssertTrue(day3.at == date3, @"Month 3 should start at 10.12.2010");
+    STAssertTrue(day4.at == date4, @"Month 4 should start at 10.01.2011");
 }
 
 - (void)testEveryYear
 {
-    STFail(@"todo");
+    input = @{@"template": @"every",
+              @"everyType": @"year",
+              @"itemsCount": @2,
+              @"startAt": [format dateFromString:@"10.10.2010"]};
+    
+    result = [uc createWithInput:input];
+    
+    MSCTimeTableItem* day1 = result.items[0];
+    MSCTimeTableItem* day2 = result.items[1];
+    
+    NSDate* date1 = [format dateFromString:@"10.10.2010"];
+    NSDate* date2 = [format dateFromString:@"10.10.2011"];
+    
+    STAssertTrue(day1.at == date1, @"Year 1 should start at 10.10.2010");
+    STAssertTrue(day2.at == date2, @"Year 2 should start at 10.10.2011");
 }
 
 - (void)testAtWeekends
