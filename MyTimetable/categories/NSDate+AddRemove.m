@@ -14,58 +14,43 @@
 {
     NSDateComponents* components = [[NSDateComponents alloc] init];
     [components setDay:days];
-    
-    NSCalendar* gregorian =
-        [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    return [gregorian dateByAddingComponents:components
-                                      toDate:self
-                                     options:0];
+    return [self dateByAddingComponents:components];
 }
 
 - (NSDate*) dateByAddingWeeks: (NSInteger)weeks
 {
     NSDateComponents* components = [[NSDateComponents alloc] init];
     [components setWeek:weeks];
-    
-    NSCalendar* gregorian =
-    [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    return [gregorian dateByAddingComponents:components
-                                      toDate:self
-                                     options:0];
+    return [self dateByAddingComponents:components];
 }
 
 - (NSDate*) dateByAddingMonths: (NSInteger)months
 {
     NSDateComponents* components = [[NSDateComponents alloc] init];
     [components setMonth:months];
-    
-    NSCalendar* gregorian =
-    [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    return [gregorian dateByAddingComponents:components
-                                      toDate:self
-                                     options:0];
+    return [self dateByAddingComponents:components];
 }
 
 - (NSDate*) dateByAddingYears: (NSInteger)years
 {
     NSDateComponents* components = [[NSDateComponents alloc] init];
     [components setYear:years];
-    
+    return [self dateByAddingComponents:components];
+}
+
+- (NSDate*) tomorrow
+{
+    return [self dateByAddingDays: 1];
+}
+
+- (NSDate*) dateByAddingComponents: (NSDateComponents*)components
+{
     NSCalendar* gregorian =
     [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     return [gregorian dateByAddingComponents:components
                                       toDate:self
                                      options:0];
-}
-
-
-- (NSDate*) tomorrow
-{
-    return [self dateByAddingDays: 1];
 }
 
 @end
