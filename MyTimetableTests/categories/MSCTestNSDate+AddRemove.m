@@ -63,6 +63,17 @@
                  @"Next year should be 10.10.2011");
 }
 
+- (void) testDateByAddingComponents
+{
+    NSDateComponents* components = [[NSDateComponents alloc] init];
+    [components setDay:5];
+    
+    NSDate* nextDate = [today dateByAddingComponents:components];
+    
+    STAssertTrue([[format stringFromDate:nextDate] isEqualToString:@"15.10.2010"],
+                 @"Next date should be 15.10.2010");
+}
+
 - (void)testTomorrow
 {
     NSDate* tomorrow = [today tomorrow];

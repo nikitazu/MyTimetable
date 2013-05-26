@@ -14,6 +14,7 @@
 - (NSDate*) dateByAddingWeeks: (NSInteger)weeks;
 - (NSDate*) dateByAddingMonths: (NSInteger)months;
 - (NSDate*) dateByAddingYears: (NSInteger)years;
+- (NSDate*) dateByAddingComponents: (NSDateComponents*)components;
 
 - (NSDate*) tomorrow;
 
