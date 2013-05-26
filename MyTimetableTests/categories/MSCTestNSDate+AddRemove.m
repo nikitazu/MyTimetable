@@ -26,18 +26,38 @@
 - (void)testDateByAddingDays
 {
     NSDate* nextDay = [today dateByAddingDays:1];
-    NSDate* nextWeek = [today dateByAddingDays:7];
-    NSDate* nextMonth = [today dateByAddingDays:31];
-    NSDate* nextYear = [today dateByAddingDays:365];
     
     STAssertTrue([[format stringFromDate: nextDay] isEqualToString:@"11.10.2010"],
                  @"Next day should be 11.10.2010");
+}
+
+- (void)testDateByAddingWeeks
+{
+    NSDate* nextWeek = [today dateByAddingWeeks:1];
     
     STAssertTrue([[format stringFromDate: nextWeek] isEqualToString:@"17.10.2010"],
                  @"Next week should be 17.10.2010");
+}
+
+- (void)testDateByAddingMonths
+{
+    NSDate* nextMonth = [today dateByAddingMonths:1];
+    NSDate* next2ndMonth = [today dateByAddingMonths:2];
+    NSDate* next3rdMonth = [today dateByAddingMonths:3];
     
     STAssertTrue([[format stringFromDate: nextMonth] isEqualToString:@"10.11.2010"],
                  @"Next month should be 10.11.2010");
+    
+    STAssertTrue([[format stringFromDate: next2ndMonth] isEqualToString:@"10.12.2010"],
+                 @"2nd next month should be 10.12.2010");
+    
+    STAssertTrue([[format stringFromDate: next3rdMonth] isEqualToString:@"10.01.2011"],
+                 @"3rd next month should be 10.01.2011");
+}
+
+- (void)testDateByAddingYears
+{
+    NSDate* nextYear = [today dateByAddingYears:1];
     
     STAssertTrue([[format stringFromDate: nextYear] isEqualToString:@"10.10.2011"],
                  @"Next year should be 10.10.2011");

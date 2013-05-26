@@ -11,6 +11,10 @@
 @interface NSDate (AddRemove)
 
 - (NSDate*) dateByAddingDays: (NSInteger)days;
+- (NSDate*) dateByAddingWeeks: (NSInteger)weeks;
+- (NSDate*) dateByAddingMonths: (NSInteger)months;
+- (NSDate*) dateByAddingYears: (NSInteger)years;
+
 - (NSDate*) tomorrow;
 
 @end

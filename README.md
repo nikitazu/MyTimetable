@@ -8,6 +8,6 @@ like:
 * paying monthly bills
 * taking medicaments
 * going to courses
-* remembering friend's birthdays
+* remembering friends' birthdays
 * etc... 
 

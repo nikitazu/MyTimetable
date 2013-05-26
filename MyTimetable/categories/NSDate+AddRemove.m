@@ -23,6 +23,46 @@
                                      options:0];
 }
 
+- (NSDate*) dateByAddingWeeks: (NSInteger)weeks
+{
+    NSDateComponents* components = [[NSDateComponents alloc] init];
+    [components setWeek:weeks];
+    
+    NSCalendar* gregorian =
+    [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    return [gregorian dateByAddingComponents:components
+                                      toDate:self
+                                     options:0];
+}
+
+- (NSDate*) dateByAddingMonths: (NSInteger)months
+{
+    NSDateComponents* components = [[NSDateComponents alloc] init];
+    [components setMonth:months];
+    
+    NSCalendar* gregorian =
+    [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    return [gregorian dateByAddingComponents:components
+                                      toDate:self
+                                     options:0];
+}
+
+- (NSDate*) dateByAddingYears: (NSInteger)years
+{
+    NSDateComponents* components = [[NSDateComponents alloc] init];
+    [components setYear:years];
+    
+    NSCalendar* gregorian =
+    [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    return [gregorian dateByAddingComponents:components
+                                      toDate:self
+                                     options:0];
+}
+
+
 - (NSDate*) tomorrow
 {
     return [self dateByAddingDays: 1];
