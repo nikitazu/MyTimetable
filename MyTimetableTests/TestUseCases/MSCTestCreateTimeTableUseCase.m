@@ -288,24 +288,6 @@
                  @"week 3 day 2 should be 17.10.2010");
 }
 
-- (void)testAtWorkdays
-{
-    input = @{@"template": @"every",
-              @"everyType": @"week",
-              @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"04.10.2010"], // monday
-              @"valuesCount": @2,
-              @"valuesStartAt": @[[format dateFromString:@"04.10.2010"],   // monday
-                                  [format dateFromString:@"05.10.2010"],   // tuesday
-                                  [format dateFromString:@"06.10.2010"],   // wednesday
-                                  [format dateFromString:@"07.10.2010"],   // thursday
-                                  [format dateFromString:@"08.10.2010"]]}; // friday
-    
-    result = [uc createWithInput:input];
-    
-    STFail(@"todo");
-}
-
 - (void)testEverydayAtCertainTime
 {
     input = @{@"template": @"every",
