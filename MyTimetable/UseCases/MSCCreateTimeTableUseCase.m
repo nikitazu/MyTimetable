@@ -57,12 +57,39 @@
         return table;
     }
     
+    NSInteger valuesCount = [[input valueForKey:@"valuesCount"] longValue];
+    if (valuesCount < 1) {
+        valuesCount = 1;
+    }
+    
+    NSArray* valuesStartAt = [input valueForKey:@"valuesStartAt"];
+    
     NSInteger counter = 0;
     
     while (counter < itemsCount) {
         NSDateComponents* components = [everyType dateComponentsWithAmount: counter * everyNth];
         NSDate* atDate = [startAt dateByAddingComponents: components];
-        MSCTimeTableItem* item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
+        MSCTimeTableItem* item = nil;
+        if (valuesCount == 1) {
+            item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
+        } else {
+            item = [[MSCTimeTableItem alloc] initAt: atDate];
+            NSMutableArray* values = [NSMutableArray array];
+            if (!valuesStartAt) {
+                for (int i = 0; i < valuesCount; i++) {
+                    [values addObject: [[MSCTimeTableValue alloc] init]];
+                }
+            } else {
+                for (NSDate* valueAt in valuesStartAt) {
+                    NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
+                    MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
+                                                initAt:valueAtReally];
+                    
+                    [values addObject: value];
+                }
+            }
+            item.values = values;
+        }
         [items addObject: item];
         counter = counter + 1;
     }

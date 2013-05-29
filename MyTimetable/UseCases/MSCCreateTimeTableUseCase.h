@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MSCTimeTable.h"
 #import "MSCTimeTableItem.h"
+#import "MSCTimeTableValue.h"
 
 @interface MSCCreateTimeTableUseCase : NSObject
 

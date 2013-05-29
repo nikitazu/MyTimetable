@@ -22,7 +22,7 @@
     [super setUp];
 }
 
-- (void)initWithOneItemAt
+- (void)testInitWithOneItemAt
 {
     MSCTimeTableItem* item = [[MSCTimeTableItem alloc] initWithOneValueAt:
                               [format dateFromString:@"10.10.2010"]];
@@ -36,6 +36,17 @@
     MSCTimeTableValue* value = item.values[0];
     STAssertTrue(value.at == item.at,
                  @"value at should equal to its items at");
+}
+
+- (void)testInitAt
+{
+    MSCTimeTableItem* item = [[MSCTimeTableItem alloc] initAt:
+                              [format dateFromString:@"10.10.2010"]];
+    
+    STAssertNotNil(item, @"constructor should create item");
+    STAssertTrue([[format stringFromDate: item.at] isEqualToString: @"10.10.2010"],
+                 @"at should be properly initialized");
+    STAssertNil(item.values, @"values should not be initialized");
 }
 
 @end

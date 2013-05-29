@@ -14,5 +14,6 @@
 @property NSArray* values;
 
 - (id)initWithOneValueAt: (NSDate*)aDate;
+- (id)initAt: (NSDate*)aDate;
 
 @end

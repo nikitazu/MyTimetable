@@ -24,4 +24,13 @@
     return self;
 }
 
+- (id)initAt: (NSDate*)aDate
+{
+    self = [super init];
+    if (self) {
+        at = aDate;
+    }
+    return self;
+}
+
 @end

@@ -249,13 +249,43 @@
               @"everyType": @"week",
               @"itemsCount": @3,
               @"startAt": [format dateFromString:@"02.10.2010"], // saturday
-              @"perItemCount": @2,
-              @"perItemStartAt": @[[format dateFromString:@"02.10.2010"],   // saturday
-                                   [format dateFromString:@"03.10.2010"]]}; // sunday
+              @"valuesCount": @2,
+              @"valuesStartAt": @[[format dateFromString:@"02.10.2010"],   // saturday
+                                  [format dateFromString:@"03.10.2010"]]}; // sunday
     
     result = [uc createWithInput:input];
     
-    STFail(@"todo");
+    MSCTimeTableItem* week1 = result.items[0];
+    MSCTimeTableItem* week2 = result.items[1];
+    MSCTimeTableItem* week3 = result.items[2];
+    
+    STAssertTrue(week1.values.count == 2, @"2 weekends should be created at week 1");
+    STAssertTrue(week2.values.count == 2, @"2 weekends should be created at week 2");
+    STAssertTrue(week3.values.count == 2, @"2 weekends should be created at week 3");
+    
+    MSCTimeTableValue* week1day1 = week1.values[0];
+    MSCTimeTableValue* week1day2 = week1.values[1];
+    
+    MSCTimeTableValue* week2day1 = week2.values[0];
+    MSCTimeTableValue* week2day2 = week2.values[1];
+    
+    MSCTimeTableValue* week3day1 = week3.values[0];
+    MSCTimeTableValue* week3day2 = week3.values[1];
+    
+    STAssertTrue([[format stringFromDate:week1day1.at] isEqualToString:@"02.10.2010"],
+                 @"week 1 day 1 should be 02.10.2010");
+    STAssertTrue([[format stringFromDate:week1day2.at] isEqualToString:@"03.10.2010"],
+                 @"week 1 day 2 should be 03.10.2010");
+    
+    STAssertTrue([[format stringFromDate:week2day1.at] isEqualToString:@"09.10.2010"],
+                 @"week 2 day 1 should be 09.10.2010");
+    STAssertTrue([[format stringFromDate:week2day2.at] isEqualToString:@"10.10.2010"],
+                 @"week 2 day 2 should be 10.10.2010");
+    
+    STAssertTrue([[format stringFromDate:week3day1.at] isEqualToString:@"16.10.2010"],
+                 @"week 3 day 1 should be 16.10.2010");
+    STAssertTrue([[format stringFromDate:week3day2.at] isEqualToString:@"17.10.2010"],
+                 @"week 3 day 2 should be 17.10.2010");
 }
 
 - (void)testAtWorkdays
@@ -264,12 +294,12 @@
               @"everyType": @"week",
               @"itemsCount": @3,
               @"startAt": [format dateFromString:@"04.10.2010"], // monday
-              @"perItemCount": @2,
-              @"perItemStartAt": @[[format dateFromString:@"04.10.2010"],   // monday
-                                   [format dateFromString:@"05.10.2010"],   // tuesday
-                                   [format dateFromString:@"06.10.2010"],   // wednesday
-                                   [format dateFromString:@"07.10.2010"],   // thursday
-                                   [format dateFromString:@"08.10.2010"]]}; // friday
+              @"valuesCount": @2,
+              @"valuesStartAt": @[[format dateFromString:@"04.10.2010"],   // monday
+                                  [format dateFromString:@"05.10.2010"],   // tuesday
+                                  [format dateFromString:@"06.10.2010"],   // wednesday
+                                  [format dateFromString:@"07.10.2010"],   // thursday
+                                  [format dateFromString:@"08.10.2010"]]}; // friday
     
     result = [uc createWithInput:input];
     
@@ -308,7 +338,7 @@
     input = @{@"template": @"every",
               @"everyType": @"day",
               @"itemsCount": @3,
-              @"perItemCount": @2,
+              @"valuesCount": @2,
               @"startAt": [format dateFromString:@"10.10.2010"]};
     
     result = [uc createWithInput:input];
@@ -322,9 +352,9 @@
               @"everyType": @"day",
               @"itemsCount": @3,
               @"startAt": [format dateFromString:@"10.10.2010"],
-              @"perItemCount": @2,
-              @"perItemStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
-                                   [timeFormat dateFromString:@"10.10.2010-15:00"]]};
+              @"valuesCount": @2,
+              @"valuesStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
+                                  [timeFormat dateFromString:@"10.10.2010-15:00"]]};
     
     result = [uc createWithInput:input];
     STFail(@"todo");
