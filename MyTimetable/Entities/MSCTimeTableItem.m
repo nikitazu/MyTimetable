@@ -7,10 +7,21 @@
 //
 
 #import "MSCTimeTableItem.h"
+#import "MSCTimeTableValue.h"
 
 @implementation MSCTimeTableItem
 
 @synthesize at;
-@synthesize done;
+@synthesize values;
+
+- (id)initWithOneValueAt: (NSDate*)aDate
+{
+    self = [super init];
+    if (self) {
+        values = @[[[MSCTimeTableValue alloc] initAt: aDate]];
+        at = aDate;
+    }
+    return self;
+}
 
 @end

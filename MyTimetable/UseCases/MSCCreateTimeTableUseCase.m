@@ -60,10 +60,9 @@
     NSInteger counter = 0;
     
     while (counter < itemsCount) {
-        MSCTimeTableItem* item = [[MSCTimeTableItem alloc] init];
         NSDateComponents* components = [everyType dateComponentsWithAmount: counter * everyNth];
-        item.at = [startAt dateByAddingComponents: components];
-        item.done = NO;
+        NSDate* atDate = [startAt dateByAddingComponents: components];
+        MSCTimeTableItem* item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
         [items addObject: item];
         counter = counter + 1;
     }

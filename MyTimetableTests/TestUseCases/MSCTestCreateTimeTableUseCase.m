@@ -75,7 +75,9 @@
     STAssertNotNil(result, @"Created timetable should not be nil");
     STAssertTrue(result.items.count == 3, @"3 items should be created");
     for (MSCTimeTableItem* item in result.items) {
-        STAssertFalse(item.done, @"items should be undone at init");
+        STAssertNotNil(item.values, @"items values should be initialized");
+        STAssertTrue(item.values.count == 1,
+                     @"everyday without perItemCount items should have single value");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
     }
     
@@ -124,7 +126,9 @@
     STAssertNotNil(result, @"Created timetable should not be nil");
     STAssertTrue(result.items.count == 4, @"4 items should be created");
     for (MSCTimeTableItem* item in result.items) {
-        STAssertFalse(item.done, @"items should be undone at init");
+        STAssertNotNil(item.values, @"items values should be initialized");
+        STAssertTrue(item.values.count == 1,
+                     @"everyday without perItemCount items should have single value");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
     }
     
@@ -157,7 +161,9 @@
     STAssertNotNil(result, @"Created timetable should not be nil");
     STAssertTrue(result.items.count == 2, @"2 items should be created");
     for (MSCTimeTableItem* item in result.items) {
-        STAssertFalse(item.done, @"items should be undone at init");
+        STAssertNotNil(item.values, @"items values should be initialized");
+        STAssertTrue(item.values.count == 1,
+                     @"everyday without perItemCount items should have single value");
         STAssertNotNil(item.at, @"items at date/time should be initialized");
     }
     
@@ -247,6 +253,8 @@
               @"perItemStartAt": @[[format dateFromString:@"02.10.2010"],   // saturday
                                    [format dateFromString:@"03.10.2010"]]}; // sunday
     
+    result = [uc createWithInput:input];
+    
     STFail(@"todo");
 }
 
@@ -262,6 +270,8 @@
                                    [format dateFromString:@"06.10.2010"],   // wednesday
                                    [format dateFromString:@"07.10.2010"],   // thursday
                                    [format dateFromString:@"08.10.2010"]]}; // friday
+    
+    result = [uc createWithInput:input];
     
     STFail(@"todo");
 }
@@ -301,6 +311,7 @@
               @"perItemCount": @2,
               @"startAt": [format dateFromString:@"10.10.2010"]};
     
+    result = [uc createWithInput:input];
     STFail(@"todo");
 }
 
@@ -315,6 +326,7 @@
               @"perItemStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
                                    [timeFormat dateFromString:@"10.10.2010-15:00"]]};
     
+    result = [uc createWithInput:input];
     STFail(@"todo");
 }
 

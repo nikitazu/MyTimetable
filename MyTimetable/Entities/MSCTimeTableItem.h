@@ -11,6 +11,8 @@
 @interface MSCTimeTableItem : NSObject
 
 @property NSDate* at;
-@property BOOL done;
+@property NSArray* values;
+
+- (id)initWithOneValueAt: (NSDate*)aDate;
 
 @end

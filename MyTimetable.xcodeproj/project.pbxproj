@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A151756741D00B41797 /* MSCTimeTableValue.m */; };
+		F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A191756769700B41797 /* MSCTestTimeTableValue.m */; };
+		F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */; };
 		F716A1641751EA45007A7EFF /* NSString+DateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = F716A1631751EA45007A7EFF /* NSString+DateComponents.m */; };
 		F716A1671751EA8F007A7EFF /* MSCTestNSString+DateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = F716A1661751EA8F007A7EFF /* MSCTestNSString+DateComponents.m */; };
 		F72538E21749DF12002D06BE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72538E11749DF12002D06BE /* Cocoa.framework */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7084A141756741D00B41797 /* MSCTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableValue.h; path = Entities/MSCTimeTableValue.h; sourceTree = "<group>"; };
+		F7084A151756741D00B41797 /* MSCTimeTableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableValue.m; path = Entities/MSCTimeTableValue.m; sourceTree = "<group>"; };
+		F7084A181756769700B41797 /* MSCTestTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableValue.h; path = entities/MSCTestTimeTableValue.h; sourceTree = "<group>"; };
+		F7084A191756769700B41797 /* MSCTestTimeTableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestTimeTableValue.m; path = entities/MSCTestTimeTableValue.m; sourceTree = "<group>"; };
+		F7084A21175678D400B41797 /* MSCTestTimeTableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableItem.h; path = entities/MSCTestTimeTableItem.h; sourceTree = "<group>"; };
+		F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestTimeTableItem.m; path = entities/MSCTestTimeTableItem.m; sourceTree = "<group>"; };
 		F716A1621751EA45007A7EFF /* NSString+DateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DateComponents.h"; path = "categories/NSString+DateComponents.h"; sourceTree = "<group>"; };
 		F716A1631751EA45007A7EFF /* NSString+DateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DateComponents.m"; path = "categories/NSString+DateComponents.m"; sourceTree = "<group>"; };
 		F716A1651751EA8F007A7EFF /* MSCTestNSString+DateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSCTestNSString+DateComponents.h"; path = "categories/MSCTestNSString+DateComponents.h"; sourceTree = "<group>"; };
@@ -95,6 +104,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7084A171756765300B41797 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F7084A181756769700B41797 /* MSCTestTimeTableValue.h */,
+				F7084A191756769700B41797 /* MSCTestTimeTableValue.m */,
+				F7084A21175678D400B41797 /* MSCTestTimeTableItem.h */,
+				F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		F72538D51749DF12002D06BE = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 		F72539071749DF12002D06BE /* MyTimetableTests */ = {
 			isa = PBXGroup;
 			children = (
+				F7084A171756765300B41797 /* Entities */,
 				F7B4BD7A1750E0A6007D5A80 /* Categories */,
 				F72539291749E498002D06BE /* TestUseCases */,
 				F72539081749DF12002D06BE /* Supporting Files */,
@@ -196,6 +217,8 @@
 				F725391E1749E072002D06BE /* MSCTimeTable.m */,
 				F72539201749E15C002D06BE /* MSCTimeTableItem.h */,
 				F72539211749E15C002D06BE /* MSCTimeTableItem.m */,
+				F7084A141756741D00B41797 /* MSCTimeTableValue.h */,
+				F7084A151756741D00B41797 /* MSCTimeTableValue.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -348,6 +371,7 @@
 				F72539281749E447002D06BE /* MSCCreateTimeTableUseCase.m in Sources */,
 				F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */,
 				F716A1641751EA45007A7EFF /* NSString+DateComponents.m in Sources */,
+				F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +382,8 @@
 				F725392C1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m in Sources */,
 				F7B4BD7D1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m in Sources */,
 				F716A1671751EA8F007A7EFF /* MSCTestNSString+DateComponents.m in Sources */,
+				F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */,
+				F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
