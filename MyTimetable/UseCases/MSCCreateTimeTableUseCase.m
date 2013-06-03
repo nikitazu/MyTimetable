@@ -55,8 +55,6 @@
 - (MSCTimeTableItem*)createTableItemNumber: (NSInteger)number
                                  withInput: (MSCTimeTableInput*)input
 {
-    MSCTimeTableItem* item = nil;
-    
     NSDateComponents* components = [input.everyType dateComponentsWithAmount:
                                     number * input.everyNth];
     NSDate* atDate = [input.startAt dateByAddingComponents: components];
@@ -66,7 +64,7 @@
         return [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
     }
     
-    item = [[MSCTimeTableItem alloc] initAt: atDate];
+    MSCTimeTableItem* item = [[MSCTimeTableItem alloc] initAt: atDate];
     NSMutableArray* values = [NSMutableArray array];
     if (!input.valuesStartAt) {
         for (int i = 0; i < input.valuesCount; i++) {
