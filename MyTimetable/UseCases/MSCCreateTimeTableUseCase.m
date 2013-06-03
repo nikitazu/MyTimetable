@@ -32,23 +32,21 @@
 - (MSCTimeTable*) createFromEveryTemplate: (MSCTimeTable*)table
                                 withInput: (MSCTimeTableInput*)input
 {
-    NSInteger itemsCount = input.itemsCount;
-    if (itemsCount == 0) {
+    if (input.itemsCount == 0) {
         return table;
     }
     
-    NSDate* startAt = input.startAt;
-    if (!startAt) {
+    if (!input.startAt) {
         return table;
     }
     
     NSMutableArray* items = [NSMutableArray array];
     NSInteger counter = 0;
     
-    while (counter < itemsCount) {
+    while (counter < input.itemsCount) {
         NSDateComponents* components = [input.everyType dateComponentsWithAmount:
                                         counter * input.everyNth];
-        NSDate* atDate = [startAt dateByAddingComponents: components];
+        NSDate* atDate = [input.startAt dateByAddingComponents: components];
         MSCTimeTableItem* item = nil;
         if (input.valuesCount == 1) {
             item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
@@ -64,7 +62,6 @@
                     NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
                     MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
                                                 initAt:valueAtReally];
-                    
                     [values addObject: value];
                 }
             }
