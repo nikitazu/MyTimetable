@@ -324,7 +324,24 @@
               @"startAt": [format dateFromString:@"10.10.2010"]};
     
     result = [uc createWithInput:input];
-    STFail(@"todo");
+    
+    MSCTimeTableItem* dayOne = result.items[0];
+    MSCTimeTableItem* dayTwo = result.items[1];
+    MSCTimeTableItem* dayTre = result.items[2];
+    
+    STAssertNotNil(dayOne.values, @"day 1 values should not be nil");
+    STAssertNotNil(dayTwo.values, @"day 2 values should not be nil");
+    STAssertNotNil(dayTre.values, @"day 3 values should not be nil");
+    
+    STAssertTrue(dayOne.values.count == 2, @"day 1 values count should be 2");
+    STAssertTrue(dayTwo.values.count == 2, @"day 2 values count should be 2");
+    STAssertTrue(dayTre.values.count == 2, @"day 3 values count should be 2");
+    
+    for(MSCTimeTableItem* item in result.items) {
+        for (MSCTimeTableValue* value in item.values) {
+            STAssertNil(value.at, @"value at should be nil");
+        }
+    }
 }
 
 
@@ -334,12 +351,58 @@
               @"everyType": @"day",
               @"itemsCount": @3,
               @"startAt": [format dateFromString:@"10.10.2010"],
+              @"everyNth": @2,
               @"valuesCount": @2,
               @"valuesStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
                                   [timeFormat dateFromString:@"10.10.2010-15:00"]]};
     
     result = [uc createWithInput:input];
-    STFail(@"todo");
+    
+    MSCTimeTableItem* dayOne = result.items[0];
+    MSCTimeTableItem* dayTwo = result.items[1];
+    MSCTimeTableItem* dayTre = result.items[2];
+    
+    STAssertNotNil(dayOne.values, @"day 1 values should not be nil");
+    STAssertNotNil(dayTwo.values, @"day 2 values should not be nil");
+    STAssertNotNil(dayTre.values, @"day 3 values should not be nil");
+    
+    STAssertTrue(dayOne.values.count == 2, @"day 1 values count should be 2");
+    STAssertTrue(dayTwo.values.count == 2, @"day 2 values count should be 2");
+    STAssertTrue(dayTre.values.count == 2, @"day 3 values count should be 2");
+    
+    MSCTimeTableValue* d1v1 = dayOne.values[0];
+    MSCTimeTableValue* d1v2 = dayOne.values[1];
+    MSCTimeTableValue* d2v1 = dayTwo.values[0];
+    MSCTimeTableValue* d2v2 = dayTwo.values[1];
+    MSCTimeTableValue* d3v1 = dayTre.values[0];
+    MSCTimeTableValue* d3v2 = dayTre.values[1];
+    
+    NSString* d1v1s = [timeFormat stringFromDate:d1v1.at];
+    NSString* d1v2s = [timeFormat stringFromDate:d1v2.at];
+    NSString* d2v1s = [timeFormat stringFromDate:d2v1.at];
+    NSString* d2v2s = [timeFormat stringFromDate:d2v2.at];
+    NSString* d3v1s = [timeFormat stringFromDate:d3v1.at];
+    NSString* d3v2s = [timeFormat stringFromDate:d3v2.at];
+    
+    STAssertTrue([d1v1s isEqualToString:@"10.10.2010-10:00"],
+                 @"Day one v1 should start at 10.10.2010-10:00");
+    
+    STAssertTrue([d1v2s isEqualToString:@"10.10.2010-15:00"],
+                 @"Day one v2 should start at 10.10.2010-15:00");
+    
+    
+    STAssertTrue([d2v1s isEqualToString:@"12.10.2010-10:00"],
+                 @"Day one v1 should start at 10.10.2010-10:00");
+    
+    STAssertTrue([d2v2s isEqualToString:@"12.10.2010-15:00"],
+                 @"Day one v2 should start at 10.10.2010-15:00");
+    
+    
+    STAssertTrue([d3v1s isEqualToString:@"14.10.2010-10:00"],
+                 @"Day one v1 should start at 10.10.2010-10:00");
+    
+    STAssertTrue([d3v2s isEqualToString:@"14.10.2010-15:00"],
+                 @"Day one v2 should start at 10.10.2010-15:00");
 }
 
 @end
