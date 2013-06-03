@@ -16,13 +16,10 @@
 {
     if (!input) { return nil; }
     
-    MSCTimeTable* table = [[MSCTimeTable alloc] init];
+    [input resetNilValuesToDefaults];
     
-    if (!input.title) {
-        table.title = @"MyTable";
-    } else {
-        table.title = input.title;
-    }
+    MSCTimeTable* table = [[MSCTimeTable alloc] init];
+    table.title = input.title;
     
     if ([input.templateType isEqualToString:@"every"]) {
         return [self createFromEveryTemplate: table
@@ -36,34 +33,22 @@
                                 withInput: (MSCTimeTableInput*)input
 {
     NSMutableArray* items = [NSMutableArray array];
-    
     NSString* everyType = input.everyType;
-    if (!everyType) {
-        everyType = @"day";
-    }
     
-    NSInteger itemsCount = [input.itemsCount longValue];
+    NSInteger itemsCount = input.itemsCount;
     if (itemsCount == 0) {
         return table;
     }
     
-    NSInteger everyNth = [input.everyNth longValue];
-    if (!(everyNth > 0)) {
-        everyNth = 1;
-    }
+    NSInteger everyNth = input.everyNth;
     
     NSDate* startAt = input.startAt;
     if (!startAt) {
         return table;
     }
     
-    NSInteger valuesCount = [input.valuesCount longValue];
-    if (valuesCount < 1) {
-        valuesCount = 1;
-    }
-    
+    NSInteger valuesCount = input.valuesCount;
     NSArray* valuesStartAt = input.valuesStartAt;
-    
     NSInteger counter = 0;
     
     while (counter < itemsCount) {

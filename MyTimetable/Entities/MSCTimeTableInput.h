@@ -13,10 +13,12 @@
 @property NSString* title;
 @property NSString* templateType;
 @property NSString* everyType;
-@property NSNumber* itemsCount;
-@property NSNumber* valuesCount;
+@property NSInteger itemsCount;
+@property NSInteger valuesCount;
 @property NSDate* startAt;
 @property NSArray* valuesStartAt;
-@property NSNumber* everyNth;
+@property NSInteger everyNth;
+
+- (void) resetNilValuesToDefaults;
 
 @end

@@ -19,4 +19,32 @@
 @synthesize valuesStartAt;
 @synthesize everyNth;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self resetNilValuesToDefaults];
+    }
+    return self;
+}
+
+- (void) resetNilValuesToDefaults
+{
+    if (!self.title) {
+        self.title = @"MyTable";
+    }
+    if (!self.everyType) {
+        self.everyType = @"day";
+    }
+    if (self.itemsCount < 0) {
+        itemsCount = 0;
+    }
+    if (self.everyNth < 1) {
+        self.everyNth = 1;
+    }
+    if (self.valuesCount < 1) {
+        self.valuesCount = 1;
+    }
+}
+
 @end

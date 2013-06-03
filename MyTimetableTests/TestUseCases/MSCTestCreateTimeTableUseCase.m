@@ -66,7 +66,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
@@ -106,7 +106,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     
     result = [uc createWithInput:input];
     STAssertTrue(result.items.count == 0, @"no items should be created without startAt");
@@ -116,9 +116,9 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @4;
+    input.itemsCount = 4;
     input.startAt = [format dateFromString:@"10.10.2010"];
-    input.everyNth = @2;
+    input.everyNth = 2;
     
     result = [uc createWithInput:input];
     
@@ -151,9 +151,9 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @2;
+    input.itemsCount = 2;
     input.startAt = [format dateFromString:@"10.10.2010"];
-    input.everyNth = @-1; // <--  <=0 should reset to 1
+    input.everyNth = -1; // <--  <=0 should reset to 1
     
     result = [uc createWithInput:input];
     
@@ -180,7 +180,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"week";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
@@ -202,7 +202,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"month";
-    input.itemsCount = @4;
+    input.itemsCount = 4;
     input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
@@ -227,7 +227,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"year";
-    input.itemsCount = @2;
+    input.itemsCount = 2;
     input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
@@ -246,9 +246,9 @@
 {
     input.templateType = @"every";
     input.everyType = @"week";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     input.startAt = [format dateFromString:@"02.10.2010"]; // saturday
-    input.valuesCount = @3;
+    input.valuesCount = 3;
     input.valuesStartAt = @[[format dateFromString:@"02.10.2010"],   // saturday
                             [format dateFromString:@"03.10.2010"]];  // sunday
 
@@ -291,7 +291,7 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     input.startAt = [timeFormat dateFromString:@"10.10.2010-11:30"];
     
     result = [uc createWithInput:input];
@@ -318,8 +318,8 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @3;
-    input.valuesCount = @2;
+    input.itemsCount = 3;
+    input.valuesCount = 2;
     input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
@@ -348,10 +348,10 @@
 {
     input.templateType = @"every";
     input.everyType = @"day";
-    input.itemsCount = @3;
+    input.itemsCount = 3;
     input.startAt = [format dateFromString:@"10.10.2010"];
-    input.everyNth = @2;
-    input.valuesCount = @2;
+    input.everyNth = 2;
+    input.valuesCount = 2;
     input.valuesStartAt =@[[timeFormat dateFromString:@"10.10.2010-10:00"],
                            [timeFormat dateFromString:@"10.10.2010-15:00"]];
     
