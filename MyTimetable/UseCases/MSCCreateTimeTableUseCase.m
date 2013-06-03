@@ -32,21 +32,19 @@
 - (MSCTimeTable*) createFromEveryTemplate: (MSCTimeTable*)table
                                 withInput: (MSCTimeTableInput*)input
 {
-    NSMutableArray* items = [NSMutableArray array];
-    NSString* everyType = input.everyType;
-    
     NSInteger itemsCount = input.itemsCount;
     if (itemsCount == 0) {
         return table;
     }
-    
-    NSInteger everyNth = input.everyNth;
     
     NSDate* startAt = input.startAt;
     if (!startAt) {
         return table;
     }
     
+    NSMutableArray* items = [NSMutableArray array];
+    NSString* everyType = input.everyType;
+    NSInteger everyNth = input.everyNth;
     NSInteger valuesCount = input.valuesCount;
     NSArray* valuesStartAt = input.valuesStartAt;
     NSInteger counter = 0;
