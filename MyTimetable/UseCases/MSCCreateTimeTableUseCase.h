@@ -10,9 +10,10 @@
 #import "MSCTimeTable.h"
 #import "MSCTimeTableItem.h"
 #import "MSCTimeTableValue.h"
+#import "MSCTimeTableInput.h"
 
 @interface MSCCreateTimeTableUseCase : NSObject
 
-- (MSCTimeTable*) createWithInput: (NSDictionary*)input;
+- (MSCTimeTable*) createWithInput: (MSCTimeTableInput*)input;
 
 @end

@@ -28,6 +28,7 @@
 		F725392C1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */; };
 		F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */; };
 		F7B4BD7D1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */; };
+		F7BAB511175CA09A005A8609 /* MSCTimeTableInput.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AddRemove.m"; path = "categories/NSDate+AddRemove.m"; sourceTree = "<group>"; };
 		F7B4BD7B1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSCTestNSDate+AddRemove.h"; path = "categories/MSCTestNSDate+AddRemove.h"; sourceTree = "<group>"; };
 		F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSCTestNSDate+AddRemove.m"; path = "categories/MSCTestNSDate+AddRemove.m"; sourceTree = "<group>"; };
+		F7BAB50F175CA09A005A8609 /* MSCTimeTableInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableInput.h; path = Entities/MSCTimeTableInput.h; sourceTree = "<group>"; };
+		F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableInput.m; path = Entities/MSCTimeTableInput.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,8 @@
 				F72539211749E15C002D06BE /* MSCTimeTableItem.m */,
 				F7084A141756741D00B41797 /* MSCTimeTableValue.h */,
 				F7084A151756741D00B41797 /* MSCTimeTableValue.m */,
+				F7BAB50F175CA09A005A8609 /* MSCTimeTableInput.h */,
+				F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */,
 				F716A1641751EA45007A7EFF /* NSString+DateComponents.m in Sources */,
 				F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */,
+				F7BAB511175CA09A005A8609 /* MSCTimeTableInput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

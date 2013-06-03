@@ -11,7 +11,7 @@
 
 @implementation MSCTestCreateTimeTableUseCase
 {
-    NSDictionary* input;
+    MSCTimeTableInput* input;
     MSCCreateTimeTableUseCase* uc;
     MSCTimeTable* result;
     NSDateFormatter* format;
@@ -23,7 +23,7 @@
 {
     [super setUp];
     
-    input = nil;
+    input = [[MSCTimeTableInput alloc]init];
     result = nil;
     uc = [[MSCCreateTimeTableUseCase alloc] init];
     
@@ -51,24 +51,23 @@
 
 - (void)testNoTitleInput
 {
-    input = @{};
     result = [uc createWithInput:input];
     STAssertTrue([result.title isEqualToString: @"MyTable"], @"Title not default");
 }
 
 - (void)testTitleInput
 {
-    input = @{@"title": @"Superb table"};
+    input.title = @"Superb table";
     result = [uc createWithInput:input];
     STAssertTrue([result.title isEqualToString:@"Superb table"], @"Title not set");
 }
 
 - (void)testEveryday
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"10.10.2010"]};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @3;
+    input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
     
@@ -96,8 +95,8 @@
 
 - (void)testEverydayNoItemsCount
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",};
+    input.templateType = @"every";
+    input.everyType = @"day";
     
     result = [uc createWithInput:input];
     STAssertTrue(result.items.count == 0, @"no items should be created without itemsCount");
@@ -105,9 +104,9 @@
 
 - (void)testEverydayNoStartAt
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @3};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @3;
     
     result = [uc createWithInput:input];
     STAssertTrue(result.items.count == 0, @"no items should be created without startAt");
@@ -115,11 +114,11 @@
 
 - (void)testEvery2ndDay
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @4,
-              @"startAt": [format dateFromString:@"10.10.2010"],
-              @"everyNth": @2};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @4;
+    input.startAt = [format dateFromString:@"10.10.2010"];
+    input.everyNth = @2;
     
     result = [uc createWithInput:input];
     
@@ -150,11 +149,11 @@
 
 - (void)testEveryNegativeDay
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @2,
-              @"startAt": [format dateFromString:@"10.10.2010"],
-              @"everyNth": @-1}; // <--  <=0 should reset to 1
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @2;
+    input.startAt = [format dateFromString:@"10.10.2010"];
+    input.everyNth = @-1; // <--  <=0 should reset to 1
     
     result = [uc createWithInput:input];
     
@@ -179,10 +178,10 @@
 
 - (void)testEveryWeek
 {
-    input = @{@"template": @"every",
-              @"everyType": @"week",
-              @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"10.10.2010"]};
+    input.templateType = @"every";
+    input.everyType = @"week";
+    input.itemsCount = @3;
+    input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
     
@@ -201,10 +200,10 @@
 
 - (void)testEveryMonth
 {
-    input = @{@"template": @"every",
-              @"everyType": @"month",
-              @"itemsCount": @4,
-              @"startAt": [format dateFromString:@"10.10.2010"]};
+    input.templateType = @"every";
+    input.everyType = @"month";
+    input.itemsCount = @4;
+    input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
     
@@ -226,10 +225,10 @@
 
 - (void)testEveryYear
 {
-    input = @{@"template": @"every",
-              @"everyType": @"year",
-              @"itemsCount": @2,
-              @"startAt": [format dateFromString:@"10.10.2010"]};
+    input.templateType = @"every";
+    input.everyType = @"year";
+    input.itemsCount = @2;
+    input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
     
@@ -245,14 +244,14 @@
 
 - (void)testAtWeekends
 {
-    input = @{@"template": @"every",
-              @"everyType": @"week",
-              @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"02.10.2010"], // saturday
-              @"valuesCount": @2,
-              @"valuesStartAt": @[[format dateFromString:@"02.10.2010"],   // saturday
-                                  [format dateFromString:@"03.10.2010"]]}; // sunday
-    
+    input.templateType = @"every";
+    input.everyType = @"week";
+    input.itemsCount = @3;
+    input.startAt = [format dateFromString:@"02.10.2010"]; // saturday
+    input.valuesCount = @3;
+    input.valuesStartAt = @[[format dateFromString:@"02.10.2010"],   // saturday
+                            [format dateFromString:@"03.10.2010"]];  // sunday
+
     result = [uc createWithInput:input];
     
     MSCTimeTableItem* week1 = result.items[0];
@@ -290,10 +289,10 @@
 
 - (void)testEverydayAtCertainTime
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @3,
-              @"startAt": [timeFormat dateFromString:@"10.10.2010-11:30"]};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @3;
+    input.startAt = [timeFormat dateFromString:@"10.10.2010-11:30"];
     
     result = [uc createWithInput:input];
     
@@ -317,11 +316,11 @@
 
 - (void)testEverydayXtimesPerDay
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @3,
-              @"valuesCount": @2,
-              @"startAt": [format dateFromString:@"10.10.2010"]};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @3;
+    input.valuesCount = @2;
+    input.startAt = [format dateFromString:@"10.10.2010"];
     
     result = [uc createWithInput:input];
     
@@ -347,14 +346,14 @@
 
 - (void)testEveryXdayYtimesPerDayAtCertainTime
 {
-    input = @{@"template": @"every",
-              @"everyType": @"day",
-              @"itemsCount": @3,
-              @"startAt": [format dateFromString:@"10.10.2010"],
-              @"everyNth": @2,
-              @"valuesCount": @2,
-              @"valuesStartAt": @[[timeFormat dateFromString:@"10.10.2010-10:00"],
-                                  [timeFormat dateFromString:@"10.10.2010-15:00"]]};
+    input.templateType = @"every";
+    input.everyType = @"day";
+    input.itemsCount = @3;
+    input.startAt = [format dateFromString:@"10.10.2010"];
+    input.everyNth = @2;
+    input.valuesCount = @2;
+    input.valuesStartAt =@[[timeFormat dateFromString:@"10.10.2010-10:00"],
+                           [timeFormat dateFromString:@"10.10.2010-15:00"]];
     
     result = [uc createWithInput:input];
     

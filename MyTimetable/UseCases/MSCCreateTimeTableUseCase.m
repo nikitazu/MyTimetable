@@ -12,19 +12,19 @@
 
 @implementation MSCCreateTimeTableUseCase
 
-- (MSCTimeTable*) createWithInput: (NSDictionary*)input
+- (MSCTimeTable*) createWithInput: (MSCTimeTableInput*)input
 {
     if (!input) { return nil; }
     
     MSCTimeTable* table = [[MSCTimeTable alloc] init];
-    table.title = [input valueForKey:@"title"];
-    if (!table.title) {
+    
+    if (!input.title) {
         table.title = @"MyTable";
+    } else {
+        table.title = input.title;
     }
     
-    NSString* template = [input valueForKey:@"template"];
-    
-    if ([template isEqualToString:@"every"]) {
+    if ([input.templateType isEqualToString:@"every"]) {
         return [self createFromEveryTemplate: table
                                    withInput: input];
     }
@@ -33,36 +33,36 @@
 }
 
 - (MSCTimeTable*) createFromEveryTemplate: (MSCTimeTable*)table
-                                withInput: (NSDictionary*)input
+                                withInput: (MSCTimeTableInput*)input
 {
     NSMutableArray* items = [NSMutableArray array];
     
-    NSString* everyType = [input valueForKey:@"everyType"];
+    NSString* everyType = input.everyType;
     if (!everyType) {
         everyType = @"day";
     }
     
-    NSInteger itemsCount = [[input valueForKey:@"itemsCount"] longValue];
+    NSInteger itemsCount = [input.itemsCount longValue];
     if (itemsCount == 0) {
         return table;
     }
     
-    NSInteger everyNth = [[input valueForKey:@"everyNth"] longValue];
+    NSInteger everyNth = [input.everyNth longValue];
     if (!(everyNth > 0)) {
         everyNth = 1;
     }
     
-    NSDate* startAt = [input valueForKey:@"startAt"];
+    NSDate* startAt = input.startAt;
     if (!startAt) {
         return table;
     }
     
-    NSInteger valuesCount = [[input valueForKey:@"valuesCount"] longValue];
+    NSInteger valuesCount = [input.valuesCount longValue];
     if (valuesCount < 1) {
         valuesCount = 1;
     }
     
-    NSArray* valuesStartAt = [input valueForKey:@"valuesStartAt"];
+    NSArray* valuesStartAt = input.valuesStartAt;
     
     NSInteger counter = 0;
     
