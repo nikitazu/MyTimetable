@@ -44,35 +44,47 @@
     NSInteger counter = 0;
     
     while (counter < input.itemsCount) {
-        NSDateComponents* components = [input.everyType dateComponentsWithAmount:
-                                        counter * input.everyNth];
-        NSDate* atDate = [input.startAt dateByAddingComponents: components];
-        MSCTimeTableItem* item = nil;
-        if (input.valuesCount == 1) {
-            item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
-        } else {
-            item = [[MSCTimeTableItem alloc] initAt: atDate];
-            NSMutableArray* values = [NSMutableArray array];
-            if (!input.valuesStartAt) {
-                for (int i = 0; i < input.valuesCount; i++) {
-                    [values addObject: [[MSCTimeTableValue alloc] init]];
-                }
-            } else {
-                for (NSDate* valueAt in input.valuesStartAt) {
-                    NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
-                    MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
-                                                initAt:valueAtReally];
-                    [values addObject: value];
-                }
-            }
-            item.values = values;
-        }
-        [items addObject: item];
+        [items addObject: [self createTableItemNumber:counter withInput:input]];
         counter = counter + 1;
     }
     
     table.items = items;
     return table;
+}
+
+- (MSCTimeTableItem*)createTableItemNumber: (NSInteger)number
+                                 withInput: (MSCTimeTableInput*)input
+{
+    MSCTimeTableItem* item = nil;
+    
+    NSDateComponents* components = [input.everyType dateComponentsWithAmount:
+                                    number * input.everyNth];
+    NSDate* atDate = [input.startAt dateByAddingComponents: components];
+    
+    if (input.valuesCount == 1)
+    {
+        item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
+    }
+    else
+    {
+        item = [[MSCTimeTableItem alloc] initAt: atDate];
+        NSMutableArray* values = [NSMutableArray array];
+        if (!input.valuesStartAt) {
+            for (int i = 0; i < input.valuesCount; i++) {
+                [values addObject: [[MSCTimeTableValue alloc] init]];
+            }
+        } else {
+            for (NSDate* valueAt in input.valuesStartAt) {
+                NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
+                MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
+                                            initAt:valueAtReally];
+                [values addObject: value];
+            }
+        }
+        item.values = values;
+    }
+    
+    return item;
 }
 
 @end
