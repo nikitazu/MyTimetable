@@ -63,26 +63,24 @@
     
     if (input.valuesCount == 1)
     {
-        item = [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
+        return [[MSCTimeTableItem alloc] initWithOneValueAt: atDate];
     }
-    else
-    {
-        item = [[MSCTimeTableItem alloc] initAt: atDate];
-        NSMutableArray* values = [NSMutableArray array];
-        if (!input.valuesStartAt) {
-            for (int i = 0; i < input.valuesCount; i++) {
-                [values addObject: [[MSCTimeTableValue alloc] init]];
-            }
-        } else {
-            for (NSDate* valueAt in input.valuesStartAt) {
-                NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
-                MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
-                                            initAt:valueAtReally];
-                [values addObject: value];
-            }
+    
+    item = [[MSCTimeTableItem alloc] initAt: atDate];
+    NSMutableArray* values = [NSMutableArray array];
+    if (!input.valuesStartAt) {
+        for (int i = 0; i < input.valuesCount; i++) {
+            [values addObject: [[MSCTimeTableValue alloc] init]];
         }
-        item.values = values;
+    } else {
+        for (NSDate* valueAt in input.valuesStartAt) {
+            NSDate* valueAtReally = [valueAt dateByAddingComponents: components];
+            MSCTimeTableValue* value = [[MSCTimeTableValue alloc]
+                                        initAt:valueAtReally];
+            [values addObject: value];
+        }
     }
+    item.values = values;
     
     return item;
 }
