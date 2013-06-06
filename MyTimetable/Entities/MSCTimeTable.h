@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSCStorageItem.h"
 
-@interface MSCTimeTable : NSObject
+@interface MSCTimeTable : NSObject <MSCStorageItem>
 
 @property NSString* title;
 @property NSData* created;

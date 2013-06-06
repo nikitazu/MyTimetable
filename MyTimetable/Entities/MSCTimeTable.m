@@ -14,4 +14,14 @@
 @synthesize created;
 @synthesize items;
 
+- (NSString*) storageName
+{
+    return self.title;
+}
+
+- (BOOL) isEqualTo:(id)object
+{
+    return [self.storageName isEqualToString: [object storageName]];
+}
+
 @end

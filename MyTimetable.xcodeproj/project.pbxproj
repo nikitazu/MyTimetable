@@ -13,6 +13,8 @@
 		F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34017605CC600CE3893 /* NSArray+Aggregates.m */; };
 		F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */; };
 		F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */; };
+		F705B34B17608B7C00CE3893 /* MSCTestMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34A17608B7C00CE3893 /* MSCTestMemoryStorage.m */; };
+		F705B34F17608D3900CE3893 /* MSCMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34E17608D3900CE3893 /* MSCMemoryStorage.m */; };
 		F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A151756741D00B41797 /* MSCTimeTableValue.m */; };
 		F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A191756769700B41797 /* MSCTestTimeTableValue.m */; };
 		F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */; };
@@ -60,6 +62,12 @@
 		F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSCTestNSArray+Aggregates.m"; path = "categories/MSCTestNSArray+Aggregates.m"; sourceTree = "<group>"; };
 		F705B34517606C5300CE3893 /* MSCTimeTableSupply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableSupply.h; path = Entities/MSCTimeTableSupply.h; sourceTree = "<group>"; };
 		F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableSupply.m; path = Entities/MSCTimeTableSupply.m; sourceTree = "<group>"; };
+		F705B34917608B7C00CE3893 /* MSCTestMemoryStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestMemoryStorage.h; path = persist/MSCTestMemoryStorage.h; sourceTree = "<group>"; };
+		F705B34A17608B7C00CE3893 /* MSCTestMemoryStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestMemoryStorage.m; path = persist/MSCTestMemoryStorage.m; sourceTree = "<group>"; };
+		F705B34D17608D3900CE3893 /* MSCMemoryStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCMemoryStorage.h; path = persist/MSCMemoryStorage.h; sourceTree = "<group>"; };
+		F705B34E17608D3900CE3893 /* MSCMemoryStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCMemoryStorage.m; path = persist/MSCMemoryStorage.m; sourceTree = "<group>"; };
+		F705B35017608E6200CE3893 /* MSCStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSCStorage.h; path = persist/MSCStorage.h; sourceTree = "<group>"; };
+		F705B3511760943900CE3893 /* MSCStorageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSCStorageItem.h; path = persist/MSCStorageItem.h; sourceTree = "<group>"; };
 		F7084A141756741D00B41797 /* MSCTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableValue.h; path = Entities/MSCTimeTableValue.h; sourceTree = "<group>"; };
 		F7084A151756741D00B41797 /* MSCTimeTableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableValue.m; path = Entities/MSCTimeTableValue.m; sourceTree = "<group>"; };
 		F7084A181756769700B41797 /* MSCTestTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableValue.h; path = entities/MSCTestTimeTableValue.h; sourceTree = "<group>"; };
@@ -125,6 +133,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F705B34817608B4500CE3893 /* Persist */ = {
+			isa = PBXGroup;
+			children = (
+				F705B34917608B7C00CE3893 /* MSCTestMemoryStorage.h */,
+				F705B34A17608B7C00CE3893 /* MSCTestMemoryStorage.m */,
+			);
+			name = Persist;
+			sourceTree = "<group>";
+		};
+		F705B34C17608D2500CE3893 /* Persist */ = {
+			isa = PBXGroup;
+			children = (
+				F705B34D17608D3900CE3893 /* MSCMemoryStorage.h */,
+				F705B34E17608D3900CE3893 /* MSCMemoryStorage.m */,
+				F705B35017608E6200CE3893 /* MSCStorage.h */,
+				F705B3511760943900CE3893 /* MSCStorageItem.h */,
+			);
+			name = Persist;
+			sourceTree = "<group>";
+		};
 		F7084A171756765300B41797 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +206,7 @@
 		F72538E71749DF12002D06BE /* MyTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				F705B34C17608D2500CE3893 /* Persist */,
 				F7B4BD761750E031007D5A80 /* Categories */,
 				F72539191749DF40002D06BE /* Entities */,
 				F72539181749DF39002D06BE /* UseCases */,
@@ -205,6 +234,7 @@
 		F72539071749DF12002D06BE /* MyTimetableTests */ = {
 			isa = PBXGroup;
 			children = (
+				F705B34817608B4500CE3893 /* Persist */,
 				F7084A171756765300B41797 /* Entities */,
 				F7B4BD7A1750E0A6007D5A80 /* Categories */,
 				F72539291749E498002D06BE /* TestUseCases */,
@@ -412,6 +442,7 @@
 				F705B33E1760564000CE3893 /* MSCUseResourceUseCase.m in Sources */,
 				F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */,
 				F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */,
+				F705B34F17608D3900CE3893 /* MSCMemoryStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +457,7 @@
 				F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */,
 				F705B338176055EC00CE3893 /* MSCTestUseResourceUseCase.m in Sources */,
 				F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */,
+				F705B34B17608B7C00CE3893 /* MSCTestMemoryStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
