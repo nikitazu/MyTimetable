@@ -55,7 +55,7 @@
                  @"resource amount should decrease by 0.5");
     
     STAssertTrue([resource.totalConsumes isEqualToNumber: amount],
-                 @"resource total supplies should be 0.5");
+                 @"resource total consumes should be 0.5");
 }
 
 @end
