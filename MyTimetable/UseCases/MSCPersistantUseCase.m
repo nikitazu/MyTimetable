@@ -11,15 +11,9 @@
 
 @implementation MSCPersistantUseCase
 
-@synthesize storage;
-
-- (id)init
+- (id<MSCStorage>) storage
 {
-    self = [super init];
-    if (self) {
-        self.storage = [[MSCMemoryStorage alloc]init];
-    }
-    return self;
+    return [MSCMemoryStorage singleton];
 }
 
 @end

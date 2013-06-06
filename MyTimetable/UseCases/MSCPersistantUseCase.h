@@ -11,6 +11,6 @@
 
 @interface MSCPersistantUseCase : NSObject
 
-@property id<MSCStorage> storage;
+- (id<MSCStorage>) storage;
 
 @end
