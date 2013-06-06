@@ -82,4 +82,23 @@
                  @"resource total consumes should be 0.5");
 }
 
+- (void) testConsumeNormalAmount
+{
+    MSCTimeTableSupply* consume = [resource normalConsume];
+    STAssertNil(consume, @"consume without normalConsumeAmount should be nil");
+    
+    resource.normalConsumeAmount = [NSDecimalNumber decimalNumberWithString:@"1.00"];
+    consume = [resource normalConsume];
+    
+    STAssertNotNil(consume, @"normal consume initialized");
+    STAssertNotNil(consume.amount, @"normal consume amount initialized");
+    
+    NSDecimalNumber* result = [NSDecimalNumber decimalNumberWithString:@"9.00"];
+    
+    [uc consume:resource byAmount:consume];
+    
+    STAssertTrue([resource.amount isEqualToNumber: result],
+                 @"resource amount should decrease by normal amount");
+}
+
 @end

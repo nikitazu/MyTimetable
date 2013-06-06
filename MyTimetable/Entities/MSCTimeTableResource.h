@@ -14,6 +14,7 @@
 @property NSString* type;
 @property NSArray* supplies;
 @property NSArray* consumes;
+@property NSDecimalNumber* normalConsumeAmount;
 
 - (id)initWithAmount: (MSCTimeTableSupply*) amount
               ofType: (NSString*) aType;
@@ -21,5 +22,7 @@
 - (NSDecimalNumber*) amount;
 - (NSDecimalNumber*) totalSupplies;
 - (NSDecimalNumber*) totalConsumes;
+
+- (MSCTimeTableSupply*) normalConsume;
 
 @end

@@ -13,6 +13,7 @@
 @synthesize type;
 @synthesize supplies;
 @synthesize consumes;
+@synthesize normalConsumeAmount;
 
 - (id)initWithAmount: (MSCTimeTableSupply*) amount
               ofType: (NSString*) aType
@@ -58,6 +59,18 @@
         total = [total decimalNumberByAdding: amt.amount];
     }
     return total;
+}
+
+- (MSCTimeTableSupply*) normalConsume
+{
+    if (normalConsumeAmount == nil) {
+        return nil;
+    }
+    
+    MSCTimeTableSupply* consume = [[MSCTimeTableSupply alloc] init];
+    consume.comment = @"normal amount";
+    consume.amount = normalConsumeAmount;
+    return consume;
 }
 
 @end
