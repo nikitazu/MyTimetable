@@ -7,7 +7,6 @@
 //
 
 #import "MSCTimeTableResource.h"
-#import "NSArray+Aggregates.h"
 
 @implementation MSCTimeTableResource
 
@@ -15,13 +14,13 @@
 @synthesize supplies;
 @synthesize consumes;
 
-- (id)initWithAmount: (NSString*) amount
+- (id)initWithAmount: (MSCTimeTableSupply*) amount
               ofType: (NSString*) aType
 {
     self = [super init];
     if (self) {
         type = aType;
-        supplies = @[ [NSDecimalNumber decimalNumberWithString: amount] ];
+        supplies = @[ amount ];
         consumes = nil;
     }
     return self;
@@ -29,12 +28,12 @@
 
 - (NSDecimalNumber*) amount
 {
-    NSDecimalNumber* totalSupplies = [self.supplies decimalNumberSum];
+    NSDecimalNumber* totalSupplies = [self sum: self.supplies];
     if (totalSupplies == nil) {
         return nil;
     }
     
-    NSDecimalNumber* totalConsumes = [self.consumes decimalNumberSum];
+    NSDecimalNumber* totalConsumes = [self sum: self.consumes];
     if (totalConsumes == nil) {
         return totalSupplies;
     }
@@ -44,12 +43,21 @@
 
 - (NSDecimalNumber*) totalSupplies
 {
-    return [self.supplies decimalNumberSum];
+    return [self sum: self.supplies];
 }
 
 - (NSDecimalNumber*) totalConsumes
 {
-    return [self.consumes decimalNumberSum];
+    return [self sum: self.consumes];
+}
+
+- (NSDecimalNumber*) sum: (NSArray*) amounts
+{
+    NSDecimalNumber* total = [NSDecimalNumber decimalNumberWithString:@"0.00"];
+    for (MSCTimeTableSupply* amt in amounts) {
+        total = [total decimalNumberByAdding: amt.amount];
+    }
+    return total;
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation MSCUseResourceUseCase
 
 - (void) supply: (MSCTimeTableResource*) resource
-     withAmount: (NSDecimalNumber*) amount
+     withAmount: (MSCTimeTableSupply*) amount
 {
     NSMutableArray* supplies = [NSMutableArray arrayWithArray: resource.supplies];
     [supplies addObject: amount];
@@ -19,7 +19,7 @@
 }
 
 - (void) consume: (MSCTimeTableResource*) resource
-        byAmount: (NSDecimalNumber*) amount
+        byAmount: (MSCTimeTableSupply*) amount
 {
     NSMutableArray* consumes = [NSMutableArray arrayWithArray: resource.consumes];
     [consumes addObject: amount];

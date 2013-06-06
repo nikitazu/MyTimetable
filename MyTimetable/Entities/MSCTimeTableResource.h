@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSCTimeTableSupply.h"
 
 @interface MSCTimeTableResource : NSObject
 
@@ -14,7 +15,7 @@
 @property NSArray* supplies;
 @property NSArray* consumes;
 
-- (id)initWithAmount: (NSString*) amount
+- (id)initWithAmount: (MSCTimeTableSupply*) amount
               ofType: (NSString*) aType;
 
 - (NSDecimalNumber*) amount;

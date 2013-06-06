@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "MSCTimeTableResource.h"
+#import "MSCTimeTableSupply.h"
 
 @interface MSCUseResourceUseCase : NSObject
 
 - (void) supply: (MSCTimeTableResource*) resource
-     withAmount: (NSDecimalNumber*) amount;
+     withAmount: (MSCTimeTableSupply*) amount;
 
 - (void) consume: (MSCTimeTableResource*) resource
-        byAmount: (NSDecimalNumber*) amount;
+        byAmount: (MSCTimeTableSupply*) amount;
 
 @end

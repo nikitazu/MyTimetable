@@ -12,6 +12,7 @@
 		F705B33E1760564000CE3893 /* MSCUseResourceUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B33D1760564000CE3893 /* MSCUseResourceUseCase.m */; };
 		F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34017605CC600CE3893 /* NSArray+Aggregates.m */; };
 		F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */; };
+		F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */; };
 		F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A151756741D00B41797 /* MSCTimeTableValue.m */; };
 		F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A191756769700B41797 /* MSCTestTimeTableValue.m */; };
 		F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */; };
@@ -57,6 +58,8 @@
 		F705B34017605CC600CE3893 /* NSArray+Aggregates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Aggregates.m"; path = "categories/NSArray+Aggregates.m"; sourceTree = "<group>"; };
 		F705B34217605D0C00CE3893 /* MSCTestNSArray+Aggregates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSCTestNSArray+Aggregates.h"; path = "categories/MSCTestNSArray+Aggregates.h"; sourceTree = "<group>"; };
 		F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSCTestNSArray+Aggregates.m"; path = "categories/MSCTestNSArray+Aggregates.m"; sourceTree = "<group>"; };
+		F705B34517606C5300CE3893 /* MSCTimeTableSupply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableSupply.h; path = Entities/MSCTimeTableSupply.h; sourceTree = "<group>"; };
+		F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableSupply.m; path = Entities/MSCTimeTableSupply.m; sourceTree = "<group>"; };
 		F7084A141756741D00B41797 /* MSCTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableValue.h; path = Entities/MSCTimeTableValue.h; sourceTree = "<group>"; };
 		F7084A151756741D00B41797 /* MSCTimeTableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableValue.m; path = Entities/MSCTimeTableValue.m; sourceTree = "<group>"; };
 		F7084A181756769700B41797 /* MSCTestTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableValue.h; path = entities/MSCTestTimeTableValue.h; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */,
 				F705B3391760561800CE3893 /* MSCTimeTableResource.h */,
 				F705B33A1760561800CE3893 /* MSCTimeTableResource.m */,
+				F705B34517606C5300CE3893 /* MSCTimeTableSupply.h */,
+				F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				F705B33B1760561800CE3893 /* MSCTimeTableResource.m in Sources */,
 				F705B33E1760564000CE3893 /* MSCUseResourceUseCase.m in Sources */,
 				F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */,
+				F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
