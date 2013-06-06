@@ -1,5 +1,5 @@
 //
-//  MSCStorageItem.h
+//  MSCPetsistantUseCase.h
 //  MyTimetable
 //
 //  Created by Никита Б. Зуев on 06.06.13.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSCStorage.h"
 
-@protocol MSCStorageItem <NSObject>
+@interface MSCPersistantUseCase : NSObject
 
-/// @storageName should be unique inside catalog
-- (NSString*) storageName;
+@property id<MSCStorage> storage;
 
 @end
