@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F705B338176055EC00CE3893 /* MSCTestUseResourceUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B337176055EC00CE3893 /* MSCTestUseResourceUseCase.m */; };
 		F705B33B1760561800CE3893 /* MSCTimeTableResource.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B33A1760561800CE3893 /* MSCTimeTableResource.m */; };
-		F705B33E1760564000CE3893 /* MSCUseResourceUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B33D1760564000CE3893 /* MSCUseResourceUseCase.m */; };
 		F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34017605CC600CE3893 /* NSArray+Aggregates.m */; };
 		F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */; };
 		F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */; };
@@ -55,6 +53,8 @@
 		F7BEEC101765ABB20032945E /* MSCKeyValueUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC0F1765ABB10032945E /* MSCKeyValueUseCase.m */; };
 		F7BEEC161765BC690032945E /* MSCTestUIUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC151765BC690032945E /* MSCTestUIUseCase.m */; };
 		F7BEEC1A1765D09A0032945E /* MSCFindViewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC191765D09A0032945E /* MSCFindViewsPresenter.m */; };
+		F7BEEC211765D7160032945E /* MSCTestTimeTableResource.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC201765D7160032945E /* MSCTestTimeTableResource.m */; };
+		F7BEEC271765D7E40032945E /* MSCTestTimeTableSupply.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC261765D7E30032945E /* MSCTestTimeTableSupply.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,12 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F705B336176055EC00CE3893 /* MSCTestUseResourceUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestUseResourceUseCase.h; path = TestUseCases/MSCTestUseResourceUseCase.h; sourceTree = "<group>"; };
-		F705B337176055EC00CE3893 /* MSCTestUseResourceUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestUseResourceUseCase.m; path = TestUseCases/MSCTestUseResourceUseCase.m; sourceTree = "<group>"; };
 		F705B3391760561800CE3893 /* MSCTimeTableResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableResource.h; path = Entities/MSCTimeTableResource.h; sourceTree = "<group>"; };
 		F705B33A1760561800CE3893 /* MSCTimeTableResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableResource.m; path = Entities/MSCTimeTableResource.m; sourceTree = "<group>"; };
-		F705B33C1760564000CE3893 /* MSCUseResourceUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCUseResourceUseCase.h; path = UseCases/MSCUseResourceUseCase.h; sourceTree = "<group>"; };
-		F705B33D1760564000CE3893 /* MSCUseResourceUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCUseResourceUseCase.m; path = UseCases/MSCUseResourceUseCase.m; sourceTree = "<group>"; };
 		F705B33F17605CC600CE3893 /* NSArray+Aggregates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Aggregates.h"; path = "categories/NSArray+Aggregates.h"; sourceTree = "<group>"; };
 		F705B34017605CC600CE3893 /* NSArray+Aggregates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Aggregates.m"; path = "categories/NSArray+Aggregates.m"; sourceTree = "<group>"; };
 		F705B34217605D0C00CE3893 /* MSCTestNSArray+Aggregates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSCTestNSArray+Aggregates.h"; path = "categories/MSCTestNSArray+Aggregates.h"; sourceTree = "<group>"; };
@@ -164,6 +160,10 @@
 		F7BEEC151765BC690032945E /* MSCTestUIUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestUIUseCase.m; path = UseCases/MSCTestUIUseCase.m; sourceTree = "<group>"; };
 		F7BEEC181765D09A0032945E /* MSCFindViewsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCFindViewsPresenter.h; path = presenters/MSCFindViewsPresenter.h; sourceTree = "<group>"; };
 		F7BEEC191765D09A0032945E /* MSCFindViewsPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCFindViewsPresenter.m; path = presenters/MSCFindViewsPresenter.m; sourceTree = "<group>"; };
+		F7BEEC1F1765D7160032945E /* MSCTestTimeTableResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableResource.h; path = entities/MSCTestTimeTableResource.h; sourceTree = "<group>"; };
+		F7BEEC201765D7160032945E /* MSCTestTimeTableResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestTimeTableResource.m; path = entities/MSCTestTimeTableResource.m; sourceTree = "<group>"; };
+		F7BEEC251765D7E20032945E /* MSCTestTimeTableSupply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableSupply.h; path = entities/MSCTestTimeTableSupply.h; sourceTree = "<group>"; };
+		F7BEEC261765D7E30032945E /* MSCTestTimeTableSupply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestTimeTableSupply.m; path = entities/MSCTestTimeTableSupply.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +223,10 @@
 				F7084A191756769700B41797 /* MSCTestTimeTableValue.m */,
 				F7084A21175678D400B41797 /* MSCTestTimeTableItem.h */,
 				F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */,
+				F7BEEC251765D7E20032945E /* MSCTestTimeTableSupply.h */,
+				F7BEEC261765D7E30032945E /* MSCTestTimeTableSupply.m */,
+				F7BEEC1F1765D7160032945E /* MSCTestTimeTableResource.h */,
+				F7BEEC201765D7160032945E /* MSCTestTimeTableResource.m */,
 				F7BEEBF51761BEBA0032945E /* MSCTestKeyValue.h */,
 				F7BEEBF61761BEBA0032945E /* MSCTestKeyValue.m */,
 			);
@@ -328,8 +332,6 @@
 				F72539271749E447002D06BE /* MSCCreateTimeTableUseCase.m */,
 				F7BEEBE31761ADEC0032945E /* MSCCreateViewUseCase.h */,
 				F7BEEBE41761ADEC0032945E /* MSCCreateViewUseCase.m */,
-				F705B33C1760564000CE3893 /* MSCUseResourceUseCase.h */,
-				F705B33D1760564000CE3893 /* MSCUseResourceUseCase.m */,
 				F705B3551760BEE000CE3893 /* MSCPersistantUseCase.h */,
 				F705B3561760BEE000CE3893 /* MSCPersistantUseCase.m */,
 				F7BEEBEC1761BCB70032945E /* MSCPersistantCreatorUseCase.h */,
@@ -376,8 +378,6 @@
 				F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */,
 				F7BEEBE61761ADFE0032945E /* MSCTestCreateViewUseCase.h */,
 				F7BEEBE71761ADFE0032945E /* MSCTestCreateViewUseCase.m */,
-				F705B336176055EC00CE3893 /* MSCTestUseResourceUseCase.h */,
-				F705B337176055EC00CE3893 /* MSCTestUseResourceUseCase.m */,
 				F705B3521760BE5600CE3893 /* MSCTestPersistantUseCase.h */,
 				F705B3531760BE5600CE3893 /* MSCTestPersistantUseCase.m */,
 				F7BEEBEF1761BD5A0032945E /* MSCTestPersistantCreatorUseCase.h */,
@@ -545,7 +545,6 @@
 				F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */,
 				F7BAB511175CA09A005A8609 /* MSCTimeTableInput.m in Sources */,
 				F705B33B1760561800CE3893 /* MSCTimeTableResource.m in Sources */,
-				F705B33E1760564000CE3893 /* MSCUseResourceUseCase.m in Sources */,
 				F705B34117605CC600CE3893 /* NSArray+Aggregates.m in Sources */,
 				F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */,
 				F705B34F17608D3900CE3893 /* MSCMemoryStorage.m in Sources */,
@@ -573,7 +572,6 @@
 				F716A1671751EA8F007A7EFF /* MSCTestNSString+DateComponents.m in Sources */,
 				F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */,
 				F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */,
-				F705B338176055EC00CE3893 /* MSCTestUseResourceUseCase.m in Sources */,
 				F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */,
 				F705B34B17608B7C00CE3893 /* MSCTestMemoryStorage.m in Sources */,
 				F705B3541760BE5600CE3893 /* MSCTestPersistantUseCase.m in Sources */,
@@ -582,6 +580,8 @@
 				F7BEEBF71761BEBA0032945E /* MSCTestKeyValue.m in Sources */,
 				F7BEEBFD1761C7B60032945E /* MSCTestFindViewsUseCase.m in Sources */,
 				F7BEEC0D1765AB440032945E /* MSCTestKeyValueUseCase.m in Sources */,
+				F7BEEC211765D7160032945E /* MSCTestTimeTableResource.m in Sources */,
+				F7BEEC271765D7E40032945E /* MSCTestTimeTableSupply.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

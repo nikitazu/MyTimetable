@@ -73,4 +73,20 @@
     return consume;
 }
 
+
+- (void) supply: (MSCTimeTableSupply*)aSupply
+{
+    NSMutableArray* newSupplies = [NSMutableArray arrayWithArray: self.supplies];
+    [newSupplies addObject: aSupply];
+    self.supplies = newSupplies;
+}
+
+- (void) consume: (MSCTimeTableSupply*)aSupply
+{
+    NSMutableArray* newConsumes = [NSMutableArray arrayWithArray: self.consumes];
+    [newConsumes addObject: aSupply];
+    self.consumes = newConsumes;
+}
+
+
 @end

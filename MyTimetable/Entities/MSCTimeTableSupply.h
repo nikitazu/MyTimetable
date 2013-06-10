@@ -13,4 +13,7 @@
 @property NSDecimalNumber* amount;
 @property NSString* comment;
 
++ (MSCTimeTableSupply*) supplyWithDecimal: (NSDecimalNumber*)decimalNumber;
++ (MSCTimeTableSupply*) supplyWithString: (NSString*)string;
+
 @end

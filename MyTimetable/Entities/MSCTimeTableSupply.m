@@ -13,4 +13,22 @@
 @synthesize amount;
 @synthesize comment;
 
++ (MSCTimeTableSupply*) supplyWithDecimal: (NSDecimalNumber*)decimalNumber
+{
+    MSCTimeTableSupply* supply = [[MSCTimeTableSupply alloc] init];
+    if (supply) {
+        supply.amount = decimalNumber;
+    }
+    return supply;
+}
+
++ (MSCTimeTableSupply*) supplyWithString: (NSString*)string
+{
+    MSCTimeTableSupply* supply = [[MSCTimeTableSupply alloc] init];
+    if (supply) {
+        supply.amount = [NSDecimalNumber decimalNumberWithString: string];
+    }
+    return supply;
+}
+
 @end

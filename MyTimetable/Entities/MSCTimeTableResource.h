@@ -22,7 +22,9 @@
 - (NSDecimalNumber*) amount;
 - (NSDecimalNumber*) totalSupplies;
 - (NSDecimalNumber*) totalConsumes;
-
 - (MSCTimeTableSupply*) normalConsume;
+
+- (void) supply: (MSCTimeTableSupply*)aSupply;
+- (void) consume: (MSCTimeTableSupply*)aSupply;
 
 @end
