@@ -29,11 +29,9 @@
     
     MSCCreateTimeTableUseCase* createTable;
     MSCUpdateTimeTableUseCase* updateTable;
-    MSCTimeTableInput* tableInput1;
-    MSCTimeTableInput* tableInput2;
     
+    NSMutableArray* tables;
     MSCKeyValueUseCase* kv;
-    
     NSDateFormatter* format;
 }
 
@@ -41,6 +39,7 @@
 {
     [super setUp];
     [[Context singleton] reset];
+    
     kv = [[MSCKeyValueUseCase alloc]init];
     findViews = [[MSCFindViewsUseCase alloc] init];
     createView = [[MSCCreateViewUseCase alloc] init];
@@ -48,10 +47,14 @@
     viewInput2 = [[MSCViewInput alloc] init];
     createTable = [[MSCCreateTimeTableUseCase alloc] init];
     updateTable = [[MSCUpdateTimeTableUseCase alloc] init];
-    tableInput1 = [[MSCTimeTableInput alloc] init];
-    tableInput2 = [[MSCTimeTableInput alloc] init];
     format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd.MM.yyyy"];
+    
+    
+    tables = [NSMutableArray array];
+    for (id input in [MSCTimeTableInputGen generateWithCounterOf:5]) {
+        [tables addObject: [createTable createWithInput:input]];
+    }
 }
 
 - (void)tearDown
@@ -63,8 +66,6 @@
     viewInput2 = nil;
     createTable = nil;
     updateTable = nil;
-    tableInput1 = nil;
-    tableInput2 = nil;
     format = nil;
     
     [super tearDown];
@@ -77,23 +78,17 @@
 
 - (void)testCurrentViews
 {
-    tableInput1 = [MSCTimeTableInputGen generate];
-    tableInput2 = [MSCTimeTableInputGen generate];
-
     viewInput1.title = @"View1";
     viewInput2.title = @"View2";
     
-    MSCTimeTable* t1 = [createTable createWithInput:tableInput1];
-    MSCTimeTable* t2 = [createTable createWithInput:tableInput2];
-    
-    [viewInput1.tables addObject:t1];
-    [viewInput1.tables addObject:t2];
-    [viewInput2.tables addObject:t1];
+    [viewInput1.tables addObject:tables[0]];
+    [viewInput1.tables addObject:tables[1]];
+    [viewInput2.tables addObject:tables[0]];
     
     MSCView* v1 = [createView createViewWithInput:viewInput1];
     [createView createViewWithInput:viewInput2];
     
-    [updateTable markTimeTable:t2 atIndex:0];
+    [updateTable markTimeTable:tables[1] atIndex:0];
     
     [kv setValue:@"current" forKey:@"filter"];
     NSArray* views = [findViews findViews];
@@ -105,23 +100,17 @@
 
 - (void)testNewViews
 {
-    tableInput1 = [MSCTimeTableInputGen generate];
-    tableInput2 = [MSCTimeTableInputGen generate];
-    
     viewInput1.title = @"View1";
     viewInput2.title = @"View2";
     
-    MSCTimeTable* t1 = [createTable createWithInput:tableInput1];
-    MSCTimeTable* t2 = [createTable createWithInput:tableInput2];
-    
-    [viewInput1.tables addObject:t1];
-    [viewInput1.tables addObject:t2];
-    [viewInput2.tables addObject:t1];
+    [viewInput1.tables addObject:tables[0]];
+    [viewInput1.tables addObject:tables[1]];
+    [viewInput2.tables addObject:tables[0]];
     
     MSCView* v1 = [createView createViewWithInput:viewInput1];
     MSCView* v2 = [createView createViewWithInput:viewInput2];
     
-    [updateTable markTimeTable:t2 atIndex:0];
+    [updateTable markTimeTable:tables[1] atIndex:0];
     
     [kv setValue:@"new" forKey:@"filter"];
     NSArray* views = [findViews findViews];
