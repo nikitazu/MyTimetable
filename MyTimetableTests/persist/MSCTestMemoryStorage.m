@@ -7,66 +7,72 @@
 //
 
 #import "MSCTestMemoryStorage.h"
-#import "MSCCreateTimeTableUseCase.h"
 #import "MSCMemoryStorage.h"
 #import "MSCStorage.h"
+#import "MSCKeyValue.h"
 
 @implementation MSCTestMemoryStorage
 {
     id<MSCStorage> storage;
-    MSCCreateTimeTableUseCase* uc;
-    MSCTimeTableInput* input;
+    MSCKeyValue* kv;
 }
 
 - (void)setUp
 {
     [super setUp];
     storage = [[MSCMemoryStorage alloc] init];
-    uc = [[MSCCreateTimeTableUseCase alloc] init];
-    input = [[MSCTimeTableInput alloc] init];
-    input.title = @"Hello";
-    input.templateType = @"every";
-    input.everyType = @"day";
-    input.itemsCount = 5;
+    kv = [MSCKeyValue kvWithKey:@"foo" andValue:@"bar"];
 }
 
 - (void)tearDown
 {
     storage = nil;
-    uc = nil;
+    kv = nil;
     [super tearDown];
 }
 
 - (void)testAddTo
 {
-    MSCTimeTable* table = [uc createWithInput:input];
-    [storage add: table to: @"new"];
-    MSCTimeTable* addedTable = [storage find:table.title in:@"new"];
-    
-    STAssertNotNil(addedTable, @"added table should not be nil");
-    STAssertTrue([table isEqualTo: addedTable], @"added table should be same as created");
+    [storage add: kv to: @"new"];
+    id added = [storage find:kv.storageName in:@"new"];
+    STAssertNotNil(added, @"added kv should not be nil");
+    STAssertTrue([kv isEqualTo: added], @"added kv should be same as created");
 }
 
 - (void)testRemoveFrom
 {
-    MSCTimeTable* table = [uc createWithInput:input];
-    [storage add: table to: @"new"];
-    [storage remove: table.storageName from: @"new"];
-    MSCTimeTable* addedTable = [storage find:table.title in:@"new"];
-    
-    STAssertNil(addedTable, @"added table should be nil, because it is removed");
+    [storage add: kv to: @"new"];
+    [storage remove:kv.storageName from: @"new"];
+    id added = [storage find:kv.storageName in:@"new"];
+    STAssertNil(added, @"added kv should be nil, because it is removed");
 }
 
 - (void)testMoveFromTo
 {
-    MSCTimeTable* table = [uc createWithInput:input];
-    [storage add: table to: @"new"];
-    [storage move: table.storageName from: @"new" to: @"old"];
+    [storage add: kv to: @"new"];
+    [storage move: kv.storageName from: @"new" to: @"old"];
+    id added = [storage find:kv.storageName in:@"old"];
+    STAssertNotNil(added, @"added kv should not be nil");
+    STAssertTrue([kv isEqualTo: added], @"added kv should be same as created");
+}
+
+- (void)testListItemsIn
+{
+    MSCKeyValue* k1 = [MSCKeyValue kvWithKey:@"foo" andValue:@"1"];
+    MSCKeyValue* k2 = [MSCKeyValue kvWithKey:@"bar" andValue:@"2"];
+    MSCKeyValue* k3 = [MSCKeyValue kvWithKey:@"buz" andValue:@"3"];
     
-    MSCTimeTable* addedTable = [storage find:table.title in:@"old"];
+    [storage add: k1 to: @"foos"];
+    [storage add: k2 to: @"foos"];
+    [storage add: k3 to: @"foos"];
     
-    STAssertNotNil(addedTable, @"added table should not be nil");
-    STAssertTrue([table isEqualTo: addedTable], @"added table should be same as created");
+    NSArray* kvs = [storage listItemsIn: @"foos"];
+    
+    STAssertNotNil(kvs, @"kvs should not be nil");
+    STAssertTrue(kvs.count == 3, @"3 tables should be created");
+    STAssertTrue([k1 isEqualTo: kvs[0]], @"kv 1 should be found");
+    STAssertTrue([k2 isEqualTo: kvs[1]], @"kv 2 should be found");
+    STAssertTrue([k3 isEqualTo: kvs[2]], @"kv 3 should be found");
 }
 
 @end

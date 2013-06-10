@@ -8,6 +8,7 @@
 
 #import "MSCTestPersistantUseCase.h"
 #import "MSCPersistantUseCase.h"
+#import "Context.h"
 
 @implementation MSCTestPersistantUseCase
 {
@@ -17,6 +18,7 @@
 - (void)setUp
 {
     [super setUp];
+    [[Context singleton] reset];
     uc = [[MSCPersistantUseCase alloc]init];
 }
 

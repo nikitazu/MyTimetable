@@ -1,18 +1,18 @@
 //
-//  MSCTimeTable.m
+//  MSCView.m
 //  MyTimetable
 //
-//  Created by Никита Б. Зуев on 20.05.13.
+//  Created by Никита Б. Зуев on 07.06.13.
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTimeTable.h"
+#import "MSCView.h"
 
-@implementation MSCTimeTable
+@implementation MSCView
 
 @synthesize title;
 @synthesize created;
-@synthesize items;
+@synthesize tables;
 
 - (NSString*) storageName
 {
@@ -26,7 +26,8 @@
 
 - (NSString*) description
 {
-    return [NSString stringWithFormat: @"{table title: %@}", self.title];
+    return [NSString stringWithFormat: @"{view title: %@ tables: %@ }",
+            title, tables, nil];
 }
 
 @end

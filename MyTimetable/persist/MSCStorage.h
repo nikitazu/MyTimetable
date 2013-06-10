@@ -11,6 +11,12 @@
 
 @protocol MSCStorage <NSObject>
 
+- (id) initEmpty;
+
+- (NSString*)currentCatalog;
+
+- (NSArray*)currentItems;
+
 - (id)find: (NSString*)name
         in: (NSString*)catalog;
 
@@ -26,5 +32,7 @@
 - (void)move: (NSString*)name
         from: (NSString*)oldCatalog
           to: (NSString*)newCatalog;
+
+- (NSArray*)listItemsIn: (NSString*)catalog;
 
 @end

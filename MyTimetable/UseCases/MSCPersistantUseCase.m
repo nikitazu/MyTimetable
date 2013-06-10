@@ -7,13 +7,13 @@
 //
 
 #import "MSCPersistantUseCase.h"
-#import "MSCMemoryStorage.h"
+#import "Context.h"
 
 @implementation MSCPersistantUseCase
 
 - (id<MSCStorage>) storage
 {
-    return [MSCMemoryStorage singleton];
+    return [[Context singleton] storage];
 }
 
 @end

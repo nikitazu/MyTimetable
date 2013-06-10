@@ -11,6 +11,4 @@
 
 @interface MSCMemoryStorage : NSObject<MSCStorage>
 
-+ (id)singleton;
-
 @end

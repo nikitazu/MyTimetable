@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTimetableTests/TestUseCases/MSCTestCreateTimeTableUseCase.m"
-         timestampString = "391946583.572915"
+         timestampString = "392537135.669539"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "303"
-         endingLineNumber = "303"
+         startingLineNumber = "305"
+         endingLineNumber = "305"
          landmarkName = "-testEverydayAtCertainTime"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTimetable/persist/MSCMemoryStorage.m"
-         timestampString = "392217553.624258"
+         timestampString = "392235722.438948"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "14"
-         endingLineNumber = "14"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "@implementation MSCMemoryStorage"
          landmarkType = "3">
       </FileBreakpoint>

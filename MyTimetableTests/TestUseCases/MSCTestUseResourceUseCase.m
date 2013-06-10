@@ -8,6 +8,7 @@
 
 #import "MSCTestUseResourceUseCase.h"
 #import "MSCUseResourceUseCase.h"
+#import "Context.h"
 
 @implementation MSCTestUseResourceUseCase
 {
@@ -19,6 +20,7 @@
 - (void)setUp
 {
     [super setUp];
+    [[Context singleton] reset];
     startingSupply = [[MSCTimeTableSupply alloc] init];
     startingSupply.amount = [NSDecimalNumber decimalNumberWithString:@"10.00"];
     resource = [[MSCTimeTableResource alloc] initWithAmount: startingSupply

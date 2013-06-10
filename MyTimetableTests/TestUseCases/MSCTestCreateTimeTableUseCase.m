@@ -8,6 +8,7 @@
 
 #import "MSCTestCreateTimeTableUseCase.h"
 #import "MSCCreateTimeTableUseCase.h"
+#import "Context.h"
 
 @implementation MSCTestCreateTimeTableUseCase
 {
@@ -23,6 +24,7 @@
 {
     [super setUp];
     
+    [[Context singleton] reset];
     input = [[MSCTimeTableInput alloc]init];
     result = nil;
     uc = [[MSCCreateTimeTableUseCase alloc] init];

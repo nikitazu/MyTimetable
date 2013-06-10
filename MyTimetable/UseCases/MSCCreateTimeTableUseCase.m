@@ -12,6 +12,15 @@
 
 @implementation MSCCreateTimeTableUseCase
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.catalog = @"tables";
+    }
+    return self;
+}
+
 - (MSCTimeTable*) createWithInput: (MSCTimeTableInput*)input
 {
     if (!input) { return nil; }
@@ -26,6 +35,7 @@
                                    withInput: input];
     }
     
+    [self addItem:table];
     return table;
 }
 

@@ -17,6 +17,7 @@
 		F705B34F17608D3900CE3893 /* MSCMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B34E17608D3900CE3893 /* MSCMemoryStorage.m */; };
 		F705B3541760BE5600CE3893 /* MSCTestPersistantUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B3531760BE5600CE3893 /* MSCTestPersistantUseCase.m */; };
 		F705B3571760BEE000CE3893 /* MSCPersistantUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B3561760BEE000CE3893 /* MSCPersistantUseCase.m */; };
+		F705B35B1760F88400CE3893 /* MSCCatalogsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F705B35A1760F88400CE3893 /* MSCCatalogsController.m */; };
 		F7084A161756741D00B41797 /* MSCTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A151756741D00B41797 /* MSCTimeTableValue.m */; };
 		F7084A1A1756769700B41797 /* MSCTestTimeTableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A191756769700B41797 /* MSCTestTimeTableValue.m */; };
 		F7084A23175678D400B41797 /* MSCTestTimeTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */; };
@@ -39,6 +40,21 @@
 		F7B4BD791750E072007D5A80 /* NSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD781750E072007D5A80 /* NSDate+AddRemove.m */; };
 		F7B4BD7D1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */; };
 		F7BAB511175CA09A005A8609 /* MSCTimeTableInput.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */; };
+		F7BEEBD6176198320032945E /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBD5176198320032945E /* Context.m */; };
+		F7BEEBE21761ACCB0032945E /* MSCView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBE11761ACCB0032945E /* MSCView.m */; };
+		F7BEEBE51761ADEC0032945E /* MSCCreateViewUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBE41761ADEC0032945E /* MSCCreateViewUseCase.m */; };
+		F7BEEBE81761ADFE0032945E /* MSCTestCreateViewUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBE71761ADFE0032945E /* MSCTestCreateViewUseCase.m */; };
+		F7BEEBEB1761AFA30032945E /* MSCViewInput.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBEA1761AFA30032945E /* MSCViewInput.m */; };
+		F7BEEBEE1761BCB70032945E /* MSCPersistantCreatorUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBED1761BCB70032945E /* MSCPersistantCreatorUseCase.m */; };
+		F7BEEBF11761BD5A0032945E /* MSCTestPersistantCreatorUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBF01761BD5A0032945E /* MSCTestPersistantCreatorUseCase.m */; };
+		F7BEEBF41761BE130032945E /* MSCKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBF31761BE130032945E /* MSCKeyValue.m */; };
+		F7BEEBF71761BEBA0032945E /* MSCTestKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBF61761BEBA0032945E /* MSCTestKeyValue.m */; };
+		F7BEEBFA1761C2310032945E /* MSCFindViewsUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBF91761C2310032945E /* MSCFindViewsUseCase.m */; };
+		F7BEEBFD1761C7B60032945E /* MSCTestFindViewsUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEBFC1761C7B60032945E /* MSCTestFindViewsUseCase.m */; };
+		F7BEEC0D1765AB440032945E /* MSCTestKeyValueUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC0C1765AB440032945E /* MSCTestKeyValueUseCase.m */; };
+		F7BEEC101765ABB20032945E /* MSCKeyValueUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC0F1765ABB10032945E /* MSCKeyValueUseCase.m */; };
+		F7BEEC161765BC690032945E /* MSCTestUIUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC151765BC690032945E /* MSCTestUIUseCase.m */; };
+		F7BEEC1A1765D09A0032945E /* MSCFindViewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEEC191765D09A0032945E /* MSCFindViewsPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +90,8 @@
 		F705B3531760BE5600CE3893 /* MSCTestPersistantUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestPersistantUseCase.m; path = TestUseCases/MSCTestPersistantUseCase.m; sourceTree = "<group>"; };
 		F705B3551760BEE000CE3893 /* MSCPersistantUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCPersistantUseCase.h; path = UseCases/MSCPersistantUseCase.h; sourceTree = "<group>"; };
 		F705B3561760BEE000CE3893 /* MSCPersistantUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCPersistantUseCase.m; path = UseCases/MSCPersistantUseCase.m; sourceTree = "<group>"; };
+		F705B3591760F88400CE3893 /* MSCCatalogsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCCatalogsController.h; path = controllers/MSCCatalogsController.h; sourceTree = "<group>"; };
+		F705B35A1760F88400CE3893 /* MSCCatalogsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCCatalogsController.m; path = controllers/MSCCatalogsController.m; sourceTree = "<group>"; };
 		F7084A141756741D00B41797 /* MSCTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableValue.h; path = Entities/MSCTimeTableValue.h; sourceTree = "<group>"; };
 		F7084A151756741D00B41797 /* MSCTimeTableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableValue.m; path = Entities/MSCTimeTableValue.m; sourceTree = "<group>"; };
 		F7084A181756769700B41797 /* MSCTestTimeTableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestTimeTableValue.h; path = entities/MSCTestTimeTableValue.h; sourceTree = "<group>"; };
@@ -116,6 +134,36 @@
 		F7B4BD7C1750E0C4007D5A80 /* MSCTestNSDate+AddRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSCTestNSDate+AddRemove.m"; path = "categories/MSCTestNSDate+AddRemove.m"; sourceTree = "<group>"; };
 		F7BAB50F175CA09A005A8609 /* MSCTimeTableInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableInput.h; path = Entities/MSCTimeTableInput.h; sourceTree = "<group>"; };
 		F7BAB510175CA09A005A8609 /* MSCTimeTableInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableInput.m; path = Entities/MSCTimeTableInput.m; sourceTree = "<group>"; };
+		F7BEEBD4176198320032945E /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
+		F7BEEBD5176198320032945E /* Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Context.m; sourceTree = "<group>"; };
+		F7BEEBE01761ACCB0032945E /* MSCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCView.h; path = Entities/MSCView.h; sourceTree = "<group>"; };
+		F7BEEBE11761ACCB0032945E /* MSCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCView.m; path = Entities/MSCView.m; sourceTree = "<group>"; };
+		F7BEEBE31761ADEC0032945E /* MSCCreateViewUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCCreateViewUseCase.h; path = UseCases/MSCCreateViewUseCase.h; sourceTree = "<group>"; };
+		F7BEEBE41761ADEC0032945E /* MSCCreateViewUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCCreateViewUseCase.m; path = UseCases/MSCCreateViewUseCase.m; sourceTree = "<group>"; };
+		F7BEEBE61761ADFE0032945E /* MSCTestCreateViewUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestCreateViewUseCase.h; path = TestUseCases/MSCTestCreateViewUseCase.h; sourceTree = "<group>"; };
+		F7BEEBE71761ADFE0032945E /* MSCTestCreateViewUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestCreateViewUseCase.m; path = TestUseCases/MSCTestCreateViewUseCase.m; sourceTree = "<group>"; };
+		F7BEEBE91761AFA30032945E /* MSCViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCViewInput.h; path = Entities/MSCViewInput.h; sourceTree = "<group>"; };
+		F7BEEBEA1761AFA30032945E /* MSCViewInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCViewInput.m; path = Entities/MSCViewInput.m; sourceTree = "<group>"; };
+		F7BEEBEC1761BCB70032945E /* MSCPersistantCreatorUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCPersistantCreatorUseCase.h; path = UseCases/MSCPersistantCreatorUseCase.h; sourceTree = "<group>"; };
+		F7BEEBED1761BCB70032945E /* MSCPersistantCreatorUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCPersistantCreatorUseCase.m; path = UseCases/MSCPersistantCreatorUseCase.m; sourceTree = "<group>"; };
+		F7BEEBEF1761BD5A0032945E /* MSCTestPersistantCreatorUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestPersistantCreatorUseCase.h; path = TestUseCases/MSCTestPersistantCreatorUseCase.h; sourceTree = "<group>"; };
+		F7BEEBF01761BD5A0032945E /* MSCTestPersistantCreatorUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestPersistantCreatorUseCase.m; path = TestUseCases/MSCTestPersistantCreatorUseCase.m; sourceTree = "<group>"; };
+		F7BEEBF21761BE130032945E /* MSCKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCKeyValue.h; path = Entities/MSCKeyValue.h; sourceTree = "<group>"; };
+		F7BEEBF31761BE130032945E /* MSCKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCKeyValue.m; path = Entities/MSCKeyValue.m; sourceTree = "<group>"; };
+		F7BEEBF51761BEBA0032945E /* MSCTestKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestKeyValue.h; path = entities/MSCTestKeyValue.h; sourceTree = "<group>"; };
+		F7BEEBF61761BEBA0032945E /* MSCTestKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestKeyValue.m; path = entities/MSCTestKeyValue.m; sourceTree = "<group>"; };
+		F7BEEBF81761C2310032945E /* MSCFindViewsUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCFindViewsUseCase.h; path = UseCases/MSCFindViewsUseCase.h; sourceTree = "<group>"; };
+		F7BEEBF91761C2310032945E /* MSCFindViewsUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCFindViewsUseCase.m; path = UseCases/MSCFindViewsUseCase.m; sourceTree = "<group>"; };
+		F7BEEBFB1761C7B60032945E /* MSCTestFindViewsUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestFindViewsUseCase.h; path = TestUseCases/MSCTestFindViewsUseCase.h; sourceTree = "<group>"; };
+		F7BEEBFC1761C7B60032945E /* MSCTestFindViewsUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestFindViewsUseCase.m; path = TestUseCases/MSCTestFindViewsUseCase.m; sourceTree = "<group>"; };
+		F7BEEC0B1765AB430032945E /* MSCTestKeyValueUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestKeyValueUseCase.h; path = TestUseCases/MSCTestKeyValueUseCase.h; sourceTree = "<group>"; };
+		F7BEEC0C1765AB440032945E /* MSCTestKeyValueUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestKeyValueUseCase.m; path = TestUseCases/MSCTestKeyValueUseCase.m; sourceTree = "<group>"; };
+		F7BEEC0E1765ABB10032945E /* MSCKeyValueUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCKeyValueUseCase.h; path = UseCases/MSCKeyValueUseCase.h; sourceTree = "<group>"; };
+		F7BEEC0F1765ABB10032945E /* MSCKeyValueUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCKeyValueUseCase.m; path = UseCases/MSCKeyValueUseCase.m; sourceTree = "<group>"; };
+		F7BEEC141765BC680032945E /* MSCTestUIUseCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTestUIUseCase.h; path = UseCases/MSCTestUIUseCase.h; sourceTree = "<group>"; };
+		F7BEEC151765BC690032945E /* MSCTestUIUseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestUIUseCase.m; path = UseCases/MSCTestUIUseCase.m; sourceTree = "<group>"; };
+		F7BEEC181765D09A0032945E /* MSCFindViewsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCFindViewsPresenter.h; path = presenters/MSCFindViewsPresenter.h; sourceTree = "<group>"; };
+		F7BEEC191765D09A0032945E /* MSCFindViewsPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCFindViewsPresenter.m; path = presenters/MSCFindViewsPresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +207,15 @@
 			name = Persist;
 			sourceTree = "<group>";
 		};
+		F705B3581760F85900CE3893 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F705B3591760F88400CE3893 /* MSCCatalogsController.h */,
+				F705B35A1760F88400CE3893 /* MSCCatalogsController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		F7084A171756765300B41797 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +223,8 @@
 				F7084A191756769700B41797 /* MSCTestTimeTableValue.m */,
 				F7084A21175678D400B41797 /* MSCTestTimeTableItem.h */,
 				F7084A22175678D400B41797 /* MSCTestTimeTableItem.m */,
+				F7BEEBF51761BEBA0032945E /* MSCTestKeyValue.h */,
+				F7BEEBF61761BEBA0032945E /* MSCTestKeyValue.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -212,6 +271,8 @@
 		F72538E71749DF12002D06BE /* MyTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				F7BEEC171765D02D0032945E /* Presenters */,
+				F705B3581760F85900CE3893 /* Controllers */,
 				F705B34C17608D2500CE3893 /* Persist */,
 				F7B4BD761750E031007D5A80 /* Categories */,
 				F72539191749DF40002D06BE /* Entities */,
@@ -220,6 +281,8 @@
 				F72538F41749DF12002D06BE /* MSCAppDelegate.m */,
 				F72538F61749DF12002D06BE /* MainMenu.xib */,
 				F72538F91749DF12002D06BE /* MyTimetable.xcdatamodeld */,
+				F7BEEBD4176198320032945E /* Context.h */,
+				F7BEEBD5176198320032945E /* Context.m */,
 				F72538E81749DF12002D06BE /* Supporting Files */,
 			);
 			path = MyTimetable;
@@ -263,10 +326,20 @@
 			children = (
 				F72539261749E447002D06BE /* MSCCreateTimeTableUseCase.h */,
 				F72539271749E447002D06BE /* MSCCreateTimeTableUseCase.m */,
+				F7BEEBE31761ADEC0032945E /* MSCCreateViewUseCase.h */,
+				F7BEEBE41761ADEC0032945E /* MSCCreateViewUseCase.m */,
 				F705B33C1760564000CE3893 /* MSCUseResourceUseCase.h */,
 				F705B33D1760564000CE3893 /* MSCUseResourceUseCase.m */,
 				F705B3551760BEE000CE3893 /* MSCPersistantUseCase.h */,
 				F705B3561760BEE000CE3893 /* MSCPersistantUseCase.m */,
+				F7BEEBEC1761BCB70032945E /* MSCPersistantCreatorUseCase.h */,
+				F7BEEBED1761BCB70032945E /* MSCPersistantCreatorUseCase.m */,
+				F7BEEC0E1765ABB10032945E /* MSCKeyValueUseCase.h */,
+				F7BEEC0F1765ABB10032945E /* MSCKeyValueUseCase.m */,
+				F7BEEBF81761C2310032945E /* MSCFindViewsUseCase.h */,
+				F7BEEBF91761C2310032945E /* MSCFindViewsUseCase.m */,
+				F7BEEC141765BC680032945E /* MSCTestUIUseCase.h */,
+				F7BEEC151765BC690032945E /* MSCTestUIUseCase.m */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -286,6 +359,12 @@
 				F705B33A1760561800CE3893 /* MSCTimeTableResource.m */,
 				F705B34517606C5300CE3893 /* MSCTimeTableSupply.h */,
 				F705B34617606C5300CE3893 /* MSCTimeTableSupply.m */,
+				F7BEEBE01761ACCB0032945E /* MSCView.h */,
+				F7BEEBE11761ACCB0032945E /* MSCView.m */,
+				F7BEEBE91761AFA30032945E /* MSCViewInput.h */,
+				F7BEEBEA1761AFA30032945E /* MSCViewInput.m */,
+				F7BEEBF21761BE130032945E /* MSCKeyValue.h */,
+				F7BEEBF31761BE130032945E /* MSCKeyValue.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -295,10 +374,18 @@
 			children = (
 				F725392A1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.h */,
 				F725392B1749E4C3002D06BE /* MSCTestCreateTimeTableUseCase.m */,
+				F7BEEBE61761ADFE0032945E /* MSCTestCreateViewUseCase.h */,
+				F7BEEBE71761ADFE0032945E /* MSCTestCreateViewUseCase.m */,
 				F705B336176055EC00CE3893 /* MSCTestUseResourceUseCase.h */,
 				F705B337176055EC00CE3893 /* MSCTestUseResourceUseCase.m */,
 				F705B3521760BE5600CE3893 /* MSCTestPersistantUseCase.h */,
 				F705B3531760BE5600CE3893 /* MSCTestPersistantUseCase.m */,
+				F7BEEBEF1761BD5A0032945E /* MSCTestPersistantCreatorUseCase.h */,
+				F7BEEBF01761BD5A0032945E /* MSCTestPersistantCreatorUseCase.m */,
+				F7BEEC0B1765AB430032945E /* MSCTestKeyValueUseCase.h */,
+				F7BEEC0C1765AB440032945E /* MSCTestKeyValueUseCase.m */,
+				F7BEEBFB1761C7B60032945E /* MSCTestFindViewsUseCase.h */,
+				F7BEEBFC1761C7B60032945E /* MSCTestFindViewsUseCase.m */,
 			);
 			name = TestUseCases;
 			sourceTree = "<group>";
@@ -327,6 +414,15 @@
 				F705B34317605D0C00CE3893 /* MSCTestNSArray+Aggregates.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		F7BEEC171765D02D0032945E /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				F7BEEC181765D09A0032945E /* MSCFindViewsPresenter.h */,
+				F7BEEC191765D09A0032945E /* MSCFindViewsPresenter.m */,
+			);
+			name = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +550,17 @@
 				F705B34717606C5300CE3893 /* MSCTimeTableSupply.m in Sources */,
 				F705B34F17608D3900CE3893 /* MSCMemoryStorage.m in Sources */,
 				F705B3571760BEE000CE3893 /* MSCPersistantUseCase.m in Sources */,
+				F705B35B1760F88400CE3893 /* MSCCatalogsController.m in Sources */,
+				F7BEEBD6176198320032945E /* Context.m in Sources */,
+				F7BEEBE21761ACCB0032945E /* MSCView.m in Sources */,
+				F7BEEBE51761ADEC0032945E /* MSCCreateViewUseCase.m in Sources */,
+				F7BEEBEB1761AFA30032945E /* MSCViewInput.m in Sources */,
+				F7BEEBEE1761BCB70032945E /* MSCPersistantCreatorUseCase.m in Sources */,
+				F7BEEBF41761BE130032945E /* MSCKeyValue.m in Sources */,
+				F7BEEBFA1761C2310032945E /* MSCFindViewsUseCase.m in Sources */,
+				F7BEEC101765ABB20032945E /* MSCKeyValueUseCase.m in Sources */,
+				F7BEEC161765BC690032945E /* MSCTestUIUseCase.m in Sources */,
+				F7BEEC1A1765D09A0032945E /* MSCFindViewsPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +577,11 @@
 				F705B34417605D0C00CE3893 /* MSCTestNSArray+Aggregates.m in Sources */,
 				F705B34B17608B7C00CE3893 /* MSCTestMemoryStorage.m in Sources */,
 				F705B3541760BE5600CE3893 /* MSCTestPersistantUseCase.m in Sources */,
+				F7BEEBE81761ADFE0032945E /* MSCTestCreateViewUseCase.m in Sources */,
+				F7BEEBF11761BD5A0032945E /* MSCTestPersistantCreatorUseCase.m in Sources */,
+				F7BEEBF71761BEBA0032945E /* MSCTestKeyValue.m in Sources */,
+				F7BEEBFD1761C7B60032945E /* MSCTestFindViewsUseCase.m in Sources */,
+				F7BEEC0D1765AB440032945E /* MSCTestKeyValueUseCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
