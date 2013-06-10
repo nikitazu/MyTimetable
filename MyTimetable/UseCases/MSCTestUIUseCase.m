@@ -29,15 +29,11 @@
 
 - (void) createTestData
 {
-    MSCTimeTableInput* it1 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it2 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it3 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it4 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it5 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it6 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it7 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it8 = [MSCTimeTableInputGen generate];
-    MSCTimeTableInput* it9 = [MSCTimeTableInputGen generate];
+    NSArray* inputs = [MSCTimeTableInputGen generateWithCounterOf:10];
+    NSMutableArray* tables = [NSMutableArray arrayWithCapacity:10];
+    for (MSCTimeTableInput* input in inputs) {
+        [tables addObject: [_createTable createWithInput: input]];
+    }
     
     MSCViewInput* iv1 = [[MSCViewInput alloc] init];
     MSCViewInput* iv2 = [[MSCViewInput alloc] init];
@@ -47,29 +43,19 @@
     iv2.title = @"View Two";
     iv3.title = @"View Three";
     
-    MSCTimeTable* t1 = [_createTable createWithInput:it1];
-    MSCTimeTable* t2 = [_createTable createWithInput:it2];
-    MSCTimeTable* t3 = [_createTable createWithInput:it3];
-    MSCTimeTable* t4 = [_createTable createWithInput:it4];
-    MSCTimeTable* t5 = [_createTable createWithInput:it5];
-    MSCTimeTable* t6 = [_createTable createWithInput:it6];
-    MSCTimeTable* t7 = [_createTable createWithInput:it7];
-    MSCTimeTable* t8 = [_createTable createWithInput:it8];
-    MSCTimeTable* t9 = [_createTable createWithInput:it9];
-    
-    [iv1.tables addObject:t1];
-    [iv1.tables addObject:t2];
-    [iv1.tables addObject:t3];
-    [iv1.tables addObject:t4];
-    [iv2.tables addObject:t1];
-    [iv2.tables addObject:t2];
-    [iv3.tables addObject:t3];
-    [iv3.tables addObject:t4];
-    [iv3.tables addObject:t5];
-    [iv3.tables addObject:t6];
-    [iv3.tables addObject:t7];
-    [iv3.tables addObject:t8];
-    [iv3.tables addObject:t9];
+    [iv1.tables addObject:tables[0]];
+    [iv1.tables addObject:tables[1]];
+    [iv1.tables addObject:tables[2]];
+    [iv1.tables addObject:tables[3]];
+    [iv2.tables addObject:tables[0]];
+    [iv2.tables addObject:tables[1]];
+    [iv3.tables addObject:tables[2]];
+    [iv3.tables addObject:tables[3]];
+    [iv3.tables addObject:tables[4]];
+    [iv3.tables addObject:tables[5]];
+    [iv3.tables addObject:tables[6]];
+    [iv3.tables addObject:tables[7]];
+    [iv3.tables addObject:tables[8]];
     
     [_createView createViewWithInput:iv1];
     [_createView createViewWithInput:iv2];

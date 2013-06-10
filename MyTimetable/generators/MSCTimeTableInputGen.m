@@ -24,4 +24,15 @@
     return input;
 }
 
++ (NSArray*)generateWithCounterOf: (NSUInteger)max;
+{
+    NSMutableArray* result = [NSMutableArray arrayWithCapacity:max];
+    for (int i = 0; i < max; i++) {
+        MSCTimeTableInput* input = [MSCTimeTableInputGen generate];
+        input.title = [input.title stringByAppendingFormat:@"%d", i];
+        result[i] = input;
+    }
+    return result;
+}
+
 @end

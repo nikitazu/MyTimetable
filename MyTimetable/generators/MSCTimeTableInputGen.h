@@ -12,5 +12,6 @@
 @interface MSCTimeTableInputGen : NSObject
 
 + (MSCTimeTableInput*)generate;
++ (NSArray*)generateWithCounterOf: (NSUInteger)max;
 
 @end
