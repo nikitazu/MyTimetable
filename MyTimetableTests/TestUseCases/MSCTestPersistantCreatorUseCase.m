@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestPersistantCreatorUseCase.h"
 #import "MSCPersistantCreatorUseCase.h"
 #import "MSCKeyValue.h"
 #import "Context.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestPersistantCreatorUseCase : SenTestCase
+
+@end
 
 @implementation MSCTestPersistantCreatorUseCase
 {

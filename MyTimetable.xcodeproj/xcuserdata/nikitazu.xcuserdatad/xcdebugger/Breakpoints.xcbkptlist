@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTimetableTests/TestUseCases/MSCTestCreateTimeTableUseCase.m"
-         timestampString = "392556260.451983"
+         timestampString = "392570141.994428"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "312"
-         endingLineNumber = "312"
+         startingLineNumber = "316"
+         endingLineNumber = "316"
          landmarkName = "-testEverydayAtCertainTime"
          landmarkType = "5">
       </FileBreakpoint>

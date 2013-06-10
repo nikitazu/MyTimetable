@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestNSArray+Aggregates.h"
 #import "NSArray+Aggregates.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestNSArray_Aggregates : SenTestCase
+
+@end
 
 @implementation MSCTestNSArray_Aggregates
 

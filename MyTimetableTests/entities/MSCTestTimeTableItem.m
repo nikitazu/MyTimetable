@@ -6,9 +6,13 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestTimeTableItem.h"
 #import "MSCTimeTableItem.h"
 #import "MSCTimeTableValue.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestTimeTableItem : SenTestCase
+
+@end
 
 @implementation MSCTestTimeTableItem
 {

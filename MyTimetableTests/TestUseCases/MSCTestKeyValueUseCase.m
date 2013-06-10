@@ -6,9 +6,13 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestKeyValueUseCase.h"
 #import "MSCKeyValueUseCase.h"
 #import "Context.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestKeyValueUseCase : SenTestCase
+
+@end
 
 @implementation MSCTestKeyValueUseCase
 {

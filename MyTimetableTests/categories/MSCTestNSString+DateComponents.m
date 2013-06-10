@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestNSString+DateComponents.h"
 #import "NSString+DateComponents.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestNSString_DateComponents : SenTestCase
+
+@end
 
 @implementation MSCTestNSString_DateComponents
 

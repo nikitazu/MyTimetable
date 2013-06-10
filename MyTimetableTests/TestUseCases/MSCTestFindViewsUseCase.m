@@ -6,12 +6,16 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestFindViewsUseCase.h"
+#import <SenTestingKit/SenTestingKit.h>
 #import "MSCFindViewsUseCase.h"
 #import "MSCCreateTimeTableUseCase.h"
 #import "MSCCreateViewUseCase.h"
 #import "MSCKeyValueUseCase.h"
 #import "Context.h"
+
+@interface MSCTestFindViewsUseCase : SenTestCase
+
+@end
 
 @implementation MSCTestFindViewsUseCase
 {

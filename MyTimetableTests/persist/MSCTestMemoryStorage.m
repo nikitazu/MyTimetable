@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestMemoryStorage.h"
 #import "MSCMemoryStorage.h"
 #import "MSCStorage.h"
 #import "MSCKeyValue.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestMemoryStorage : SenTestCase
+
+@end
 
 @implementation MSCTestMemoryStorage
 {

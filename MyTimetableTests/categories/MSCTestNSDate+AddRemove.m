@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Никита Б. Зуев. All rights reserved.
 //
 
-#import "MSCTestNSDate+AddRemove.h"
 #import "NSDate+AddRemove.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface MSCTestNSDate_AddRemove : SenTestCase
+
+@end
+
 
 @implementation MSCTestNSDate_AddRemove
 {
