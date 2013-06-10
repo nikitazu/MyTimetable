@@ -64,6 +64,13 @@
     STAssertTrue([result.title isEqualToString:@"Superb table"], @"Title not set");
 }
 
+- (void)testImplicitTemplateEvery
+{
+    result = [uc createWithInput:input];
+    STAssertTrue([input.templateType isEqualToString:@"every"],
+                 @"template type should be defaulted");
+}
+
 - (void)testEveryday
 {
     input.templateType = @"every";

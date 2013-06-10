@@ -33,4 +33,38 @@
     return self;
 }
 
+- (BOOL)done
+{
+    for (MSCTimeTableValue* v in self.values) {
+        if (!v.done) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (BOOL)started
+{
+    for (MSCTimeTableValue* v in self.values) {
+        if (v.done) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)setAllDone
+{
+    for (MSCTimeTableValue* v in self.values) {
+        v.done = YES;
+    }
+}
+
+- (void)setAllUndone
+{
+    for (MSCTimeTableValue* v in self.values) {
+        v.done = NO;
+    }
+}
+
 @end

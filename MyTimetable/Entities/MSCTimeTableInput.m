@@ -33,6 +33,9 @@
     if (!self.title) {
         self.title = @"MyTable";
     }
+    if (!self.templateType) {
+        self.templateType = @"every";
+    }
     if (!self.everyType) {
         self.everyType = @"day";
     }

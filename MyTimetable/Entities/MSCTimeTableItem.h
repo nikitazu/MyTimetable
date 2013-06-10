@@ -16,4 +16,9 @@
 - (id)initWithOneValueAt: (NSDate*)aDate;
 - (id)initAt: (NSDate*)aDate;
 
+- (BOOL)done;
+- (BOOL)started;
+- (void)setAllDone;
+- (void)setAllUndone;
+
 @end

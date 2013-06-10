@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTimetableTests/TestUseCases/MSCTestCreateTimeTableUseCase.m"
-         timestampString = "392537135.669539"
+         timestampString = "392556260.451983"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "305"
-         endingLineNumber = "305"
+         startingLineNumber = "312"
+         endingLineNumber = "312"
          landmarkName = "-testEverydayAtCertainTime"
          landmarkType = "5">
       </FileBreakpoint>
@@ -27,6 +27,19 @@
          startingLineNumber = "59"
          endingLineNumber = "59"
          landmarkName = "@implementation MSCMemoryStorage"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyTimetable/UseCases/MSCUpdateTimeTableUseCase.m"
+         timestampString = "392555652.681338"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "@implementation MSCUpdateTimeTableUseCase"
          landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
