@@ -9,6 +9,7 @@
 #import "MSCTestUIUseCase.h"
 #import "MSCCreateTimeTableUseCase.h"
 #import "MSCCreateViewUseCase.h"
+#import "MSCTimeTableGen.h"
 
 @implementation MSCTestUIUseCase
 {
@@ -63,6 +64,15 @@
     [_createView createViewWithInput:iv1];
     [_createView createViewWithInput:iv2];
     [_createView createViewWithInput:iv3];
+    
+    // EXPERIMENTAL
+    MSCViewInput* iv4 = [[MSCViewInput alloc] init];
+    iv4.title = @"Random generated";
+    [iv4.tables addObject:[MSCTimeTableGen generate]];
+    [iv4.tables addObject:[MSCTimeTableGen generate]];
+    [iv4.tables addObject:[MSCTimeTableGen generate]];
+    [iv4.tables addObject:[MSCTimeTableGen generate]];
+    [_createView createViewWithInput:iv4];
 }
 
 @end

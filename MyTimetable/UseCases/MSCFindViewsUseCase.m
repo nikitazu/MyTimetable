@@ -8,6 +8,9 @@
 
 #import "MSCFindViewsUseCase.h"
 #import "MSCKeyValueUseCase.h"
+#import "MSCView.h"
+#import "MSCTimeTable.h"
+#import "MSCTimeTableItem.h"
 
 @implementation MSCFindViewsUseCase
 {
@@ -26,8 +29,20 @@
 - (NSArray*) findViews
 {
     NSString* filter = [_kv valueForKey:@"filter"];
+    NSArray* items = [self.storage listItemsIn:@"views"];
+    
     if ([filter isEqualToString:@"new"]) {
-        return [self.storage listItemsIn:@"views"];
+        return items;
+    }
+    
+    if ([filter isEqualToString:@"current"]) {
+        NSMutableArray* result = [NSMutableArray array];
+        for (MSCView* view in items) {
+            if (view.current) {
+                [result addObject:view];
+            }
+        }
+        return result;
     }
     
     return nil;

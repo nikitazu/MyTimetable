@@ -10,6 +10,7 @@
 #import "MSCFindViewsUseCase.h"
 #import "MSCCreateTimeTableUseCase.h"
 #import "MSCCreateViewUseCase.h"
+#import "MSCUpdateTimeTableUseCase.h"
 #import "MSCKeyValueUseCase.h"
 #import "Context.h"
 
@@ -26,6 +27,7 @@
     MSCViewInput* viewInput2;
     
     MSCCreateTimeTableUseCase* createTable;
+    MSCUpdateTimeTableUseCase* updateTable;
     MSCTimeTableInput* tableInput1;
     MSCTimeTableInput* tableInput2;
     
@@ -44,6 +46,7 @@
     viewInput1 = [[MSCViewInput alloc] init];
     viewInput2 = [[MSCViewInput alloc] init];
     createTable = [[MSCCreateTimeTableUseCase alloc] init];
+    updateTable = [[MSCUpdateTimeTableUseCase alloc] init];
     tableInput1 = [[MSCTimeTableInput alloc] init];
     tableInput2 = [[MSCTimeTableInput alloc] init];
     format = [[NSDateFormatter alloc] init];
@@ -58,6 +61,7 @@
     viewInput1 = nil;
     viewInput2 = nil;
     createTable = nil;
+    updateTable = nil;
     tableInput1 = nil;
     tableInput2 = nil;
     format = nil;
@@ -72,13 +76,43 @@
 
 - (void)testCurrentViews
 {
-    STFail(@"todo");
+    tableInput1.title = @"Table1";
+    tableInput1.startAt = [NSDate date];
+    tableInput1.itemsCount = 2;
+    tableInput2.title = @"Table2";
+    tableInput2.itemsCount = 2;
+    tableInput2.startAt = [NSDate date];
+    viewInput1.title = @"View1";
+    viewInput2.title = @"View2";
+    
+    MSCTimeTable* t1 = [createTable createWithInput:tableInput1];
+    MSCTimeTable* t2 = [createTable createWithInput:tableInput2];
+    
+    [viewInput1.tables addObject:t1];
+    [viewInput1.tables addObject:t2];
+    [viewInput2.tables addObject:t1];
+    
+    MSCView* v1 = [createView createViewWithInput:viewInput1];
+    [createView createViewWithInput:viewInput2];
+    
+    [updateTable markTimeTable:t2 atIndex:0];
+    
+    [kv setValue:@"current" forKey:@"filter"];
+    NSArray* views = [findViews findViews];
+
+    STAssertNotNil(views, @"views should be found");
+    STAssertTrue(views.count == 1, @"1 view should be found, got: %ld", views.count);
+    STAssertTrue([v1 isEqualTo: views[0]], @"view 1 should be found");
 }
 
 - (void)testNewViews
 {
     tableInput1.title = @"Table1";
+    tableInput1.startAt = [NSDate date];
+    tableInput1.itemsCount = 2;
     tableInput2.title = @"Table2";
+    tableInput2.itemsCount = 2;
+    tableInput2.startAt = [NSDate date];
     viewInput1.title = @"View1";
     viewInput2.title = @"View2";
     
@@ -91,6 +125,8 @@
     
     MSCView* v1 = [createView createViewWithInput:viewInput1];
     MSCView* v2 = [createView createViewWithInput:viewInput2];
+    
+    [updateTable markTimeTable:t2 atIndex:0];
     
     [kv setValue:@"new" forKey:@"filter"];
     NSArray* views = [findViews findViews];

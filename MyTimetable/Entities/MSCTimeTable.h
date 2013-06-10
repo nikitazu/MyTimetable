@@ -15,4 +15,7 @@
 @property NSData* created;
 @property NSArray* items;
 
+- (BOOL)done;
+- (BOOL)started;
+
 @end

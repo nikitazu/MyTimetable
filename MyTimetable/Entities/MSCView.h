@@ -15,4 +15,7 @@
 @property NSDate* created;
 @property NSMutableDictionary* tables;
 
+- (BOOL)current;
+- (BOOL)isNew;
+
 @end
