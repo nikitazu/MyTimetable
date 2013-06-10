@@ -13,6 +13,7 @@
 #import "MSCUpdateTimeTableUseCase.h"
 #import "MSCKeyValueUseCase.h"
 #import "Context.h"
+#import "MSCTimeTableInputGen.h"
 
 @interface MSCTestFindViewsUseCase : SenTestCase
 
@@ -76,12 +77,9 @@
 
 - (void)testCurrentViews
 {
-    tableInput1.title = @"Table1";
-    tableInput1.startAt = [NSDate date];
-    tableInput1.itemsCount = 2;
-    tableInput2.title = @"Table2";
-    tableInput2.itemsCount = 2;
-    tableInput2.startAt = [NSDate date];
+    tableInput1 = [MSCTimeTableInputGen generate];
+    tableInput2 = [MSCTimeTableInputGen generate];
+
     viewInput1.title = @"View1";
     viewInput2.title = @"View2";
     
@@ -107,12 +105,9 @@
 
 - (void)testNewViews
 {
-    tableInput1.title = @"Table1";
-    tableInput1.startAt = [NSDate date];
-    tableInput1.itemsCount = 2;
-    tableInput2.title = @"Table2";
-    tableInput2.itemsCount = 2;
-    tableInput2.startAt = [NSDate date];
+    tableInput1 = [MSCTimeTableInputGen generate];
+    tableInput2 = [MSCTimeTableInputGen generate];
+    
     viewInput1.title = @"View1";
     viewInput2.title = @"View2";
     

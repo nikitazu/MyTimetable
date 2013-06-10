@@ -14,6 +14,5 @@
 + (long)numberLessThan: (NSUInteger)max;
 + (long)numberLessThan: (NSUInteger)max
               MoreThan: (NSUInteger)min;
-+ (long)numberWithDigitsOf: (NSUInteger)digits;
 
 @end

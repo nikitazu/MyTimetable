@@ -47,8 +47,10 @@
     [iv1.tables addObject:tables[1]];
     [iv1.tables addObject:tables[2]];
     [iv1.tables addObject:tables[3]];
+    
     [iv2.tables addObject:tables[0]];
     [iv2.tables addObject:tables[1]];
+    
     [iv3.tables addObject:tables[2]];
     [iv3.tables addObject:tables[3]];
     [iv3.tables addObject:tables[4]];
