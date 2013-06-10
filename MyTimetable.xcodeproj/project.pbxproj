@@ -63,6 +63,7 @@
 		F7D9333717663F520033963F /* MSCStringGen.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D9333617663F520033963F /* MSCStringGen.m */; };
 		F7D9333A17663FAE0033963F /* MSCNumberGen.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D9333917663FAE0033963F /* MSCNumberGen.m */; };
 		F7D9333E176640A80033963F /* MSCTestNumberGen.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D9333D176640A80033963F /* MSCTestNumberGen.m */; };
+		F7D9334117664C4D0033963F /* MSCTimeTableInputGen.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D9334017664C4D0033963F /* MSCTimeTableInputGen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,8 @@
 		F7D9333817663FAE0033963F /* MSCNumberGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCNumberGen.h; path = generators/MSCNumberGen.h; sourceTree = "<group>"; };
 		F7D9333917663FAE0033963F /* MSCNumberGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCNumberGen.m; path = generators/MSCNumberGen.m; sourceTree = "<group>"; };
 		F7D9333D176640A80033963F /* MSCTestNumberGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTestNumberGen.m; path = generators/MSCTestNumberGen.m; sourceTree = "<group>"; };
+		F7D9333F17664C4D0033963F /* MSCTimeTableInputGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCTimeTableInputGen.h; path = generators/MSCTimeTableInputGen.h; sourceTree = "<group>"; };
+		F7D9334017664C4D0033963F /* MSCTimeTableInputGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCTimeTableInputGen.m; path = generators/MSCTimeTableInputGen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +434,8 @@
 				F7D9333617663F520033963F /* MSCStringGen.m */,
 				F7D9332F17663B350033963F /* MSCTimeTableGen.h */,
 				F7D9333017663B350033963F /* MSCTimeTableGen.m */,
+				F7D9333F17664C4D0033963F /* MSCTimeTableInputGen.h */,
+				F7D9334017664C4D0033963F /* MSCTimeTableInputGen.m */,
 			);
 			name = Generators;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				F7D9333117663B350033963F /* MSCTimeTableGen.m in Sources */,
 				F7D9333717663F520033963F /* MSCStringGen.m in Sources */,
 				F7D9333A17663FAE0033963F /* MSCNumberGen.m in Sources */,
+				F7D9334117664C4D0033963F /* MSCTimeTableInputGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

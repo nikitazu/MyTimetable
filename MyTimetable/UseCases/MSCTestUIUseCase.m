@@ -9,7 +9,7 @@
 #import "MSCTestUIUseCase.h"
 #import "MSCCreateTimeTableUseCase.h"
 #import "MSCCreateViewUseCase.h"
-#import "MSCTimeTableGen.h"
+#import "MSCTimeTableInputGen.h"
 
 @implementation MSCTestUIUseCase
 {
@@ -29,15 +29,15 @@
 
 - (void) createTestData
 {
-    MSCTimeTableInput* it1 = [[MSCTimeTableInput alloc] init];
-    MSCTimeTableInput* it2 = [[MSCTimeTableInput alloc] init];
-    MSCTimeTableInput* it3 = [[MSCTimeTableInput alloc] init];
-    MSCTimeTableInput* it4 = [[MSCTimeTableInput alloc] init];
-    
-    it1.title = @"Table One";
-    it2.title = @"Table Two";
-    it3.title = @"Table Three";
-    it4.title = @"Table Four";
+    MSCTimeTableInput* it1 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it2 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it3 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it4 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it5 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it6 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it7 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it8 = [MSCTimeTableInputGen generate];
+    MSCTimeTableInput* it9 = [MSCTimeTableInputGen generate];
     
     MSCViewInput* iv1 = [[MSCViewInput alloc] init];
     MSCViewInput* iv2 = [[MSCViewInput alloc] init];
@@ -51,6 +51,11 @@
     MSCTimeTable* t2 = [_createTable createWithInput:it2];
     MSCTimeTable* t3 = [_createTable createWithInput:it3];
     MSCTimeTable* t4 = [_createTable createWithInput:it4];
+    MSCTimeTable* t5 = [_createTable createWithInput:it5];
+    MSCTimeTable* t6 = [_createTable createWithInput:it6];
+    MSCTimeTable* t7 = [_createTable createWithInput:it7];
+    MSCTimeTable* t8 = [_createTable createWithInput:it8];
+    MSCTimeTable* t9 = [_createTable createWithInput:it9];
     
     [iv1.tables addObject:t1];
     [iv1.tables addObject:t2];
@@ -60,19 +65,15 @@
     [iv2.tables addObject:t2];
     [iv3.tables addObject:t3];
     [iv3.tables addObject:t4];
+    [iv3.tables addObject:t5];
+    [iv3.tables addObject:t6];
+    [iv3.tables addObject:t7];
+    [iv3.tables addObject:t8];
+    [iv3.tables addObject:t9];
     
     [_createView createViewWithInput:iv1];
     [_createView createViewWithInput:iv2];
     [_createView createViewWithInput:iv3];
-    
-    // EXPERIMENTAL
-    MSCViewInput* iv4 = [[MSCViewInput alloc] init];
-    iv4.title = @"Random generated";
-    [iv4.tables addObject:[MSCTimeTableGen generate]];
-    [iv4.tables addObject:[MSCTimeTableGen generate]];
-    [iv4.tables addObject:[MSCTimeTableGen generate]];
-    [iv4.tables addObject:[MSCTimeTableGen generate]];
-    [_createView createViewWithInput:iv4];
 }
 
 @end
